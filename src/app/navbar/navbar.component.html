@@ -1,3 +1,19 @@
-<p>
-  navbar works!
-</p>
+<div class="navbar-container">
+  <div class="navbar">
+    <ul class="navbar-list" (window:resize)="toggleVisibility('resize')" [ngStyle]="toggleVisibility()">
+      <div class="navbar-left">
+        <li class="navbar-item">Home</li>
+        <li class="navbar-item">Projects</li>
+      </div>
+      <div class="navbar-right">
+        <li class="navbar-item">Admin</li>
+        <li class="navbar-item">Login</li>
+        <li class="navbar-item">Logout</li>
+      </div>
+    </ul>
+    <div class="navbar-toggle-container" (click)="menuVisible = !menuVisible">
+      <p class="fa fa-bars navbar-toggle-logo"></p>
+      <p class="navbar-toggle-description">MENU</p>
+    </div>
+  </div>
+</div>
