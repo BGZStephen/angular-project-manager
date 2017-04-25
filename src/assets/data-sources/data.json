@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "createdAt": "",
+      "user": "",
+      "title": "",
+      "incompleteItems": [],
+      "completedItems": []
+    },
+    {
+      "createdAt": "",
+      "user": "",
+      "title": "",
+      "incompleteItems": [],
+      "completedItems": []
+    },
+    {
+      "createdAt": "",
+      "user": "",
+      "title": "",
+      "incompleteItems": [],
+      "completedItems": []
+    }
+  ],
+  "users": [
+    {
+      "createdAt": "",
+      "username": "",
+      "firstName": "",
+      "lastName": ""
+    },
+    {
+      "createdAt": "",
+      "username": "",
+      "firstName": "",
+      "lastName": ""
+    },
+    {
+      "createdAt": "",
+      "username": "",
+      "firstName": "",
+      "lastName": ""
+    }
+  ]
+}

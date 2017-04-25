@@ -1,0 +1,28 @@
+.footer-container {
+  border-bottom: 6px solid #7f0000;
+  border-top: 3px solid #b71c1c;
+  background: #b71c1c;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: auto;
+  width: 100%;
+}
+
+.copyright-container {
+  padding: 15px;
+}
+
+.copyright-description {
+
+}
+
+.social-container {
+  padding: 0 15px;
+}
+
+.social-item {
+  padding: 15px 10px;
+}
