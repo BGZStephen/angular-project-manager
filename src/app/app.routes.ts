@@ -12,9 +12,9 @@ const APP_ROUTES: Routes = [
   {path: "login", component: LoginComponent},
   {path: "admin", component: AdminComponent},
   {path: "projects", component: ProjectsComponent},
+  {path: "projects/add", component: ProjectAddComponent},
+  {path: "projects/edit", component: ProjectEditComponent},
   {path: "project/:id", component: ProjectComponent},
-  {path: "project/add", component: ProjectAddComponent},
-  {path: "project/edit", component: ProjectEditComponent},
 ]
 
 export const router = RouterModule.forRoot(APP_ROUTES)

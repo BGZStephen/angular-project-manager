@@ -11,4 +11,9 @@ export class FirebaseService {
     return projects
   }
 
+  addProject(projectObject) {
+    let projects = this.af.database.list('/projects');
+    projects.push(projectObject);
+  }
+
 }

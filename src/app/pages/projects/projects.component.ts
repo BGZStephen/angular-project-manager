@@ -22,6 +22,12 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
   }
 
+  expandProject(index) {
+    let projects = document.getElementsByClassName("project-content-container")
+    projects[index].classList.toggle("project-content-container-visible")
+    // projects[index].classList.toggle("project-content-container-visible")
+  }
+
   toggleProjectVisibility() {
     if (this.projectVisible == false) {
       return {"height": "0"}

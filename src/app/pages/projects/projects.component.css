@@ -49,6 +49,10 @@
   overflow: hidden;
 }
 
+.project-content-container-visible {
+  height: auto !important;
+}
+
 .project-description-container {
   padding: 10px;
   width: 100%;
@@ -82,10 +86,6 @@
   padding: 5px 0;
 }
 
-.incomplete-list-marker {
-  margin-right: 10px;
-}
-
 .complete-items-container {
   padding: 10px;
 }
@@ -106,8 +106,15 @@
   color: #333;
   display: flex;
   padding: 5px 0;
-  text-decoration: line-through;
   width: 100%;
+}
+
+.complete-item-description {
+  text-decoration: line-through;
+}
+
+.incomplete-list-marker {
+  margin-right: 10px;
 }
 
 .complete-list-marker {
@@ -130,7 +137,6 @@
     border-bottom: 5px solid #7f0000;
     border-top: 5px solid #7f0000;
     border-radius: 5px;
-    flex: 1 1 0;
     margin: 0 5px 15px 5px;
     position: relative;
     width: calc((100% - 30px) / 3);

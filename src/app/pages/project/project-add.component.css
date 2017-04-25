@@ -1,0 +1,35 @@
+.project-add-container {
+  width: 100%;
+}
+
+.project-add-header {
+  margin: 10px 0 20px 0;
+}
+
+.project-add-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  max-width: 100%;
+}
+
+.project-add-input {
+  font-size: 1.2em;
+  margin: 5px 0;
+  padding: 5px
+}
+
+.project-add-task-header {
+  margin: 20px 0 10px 0;
+}
+
+.project-add-submit {
+  align-self: flex-start;
+  background: #7f0000;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0;
+  padding: 10px 25px;
+}
