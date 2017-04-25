@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from "../../services/firebase.service"
 
 @Component({
   selector: 'app-projects',
@@ -7,18 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
-
   projectVisible: boolean = false;
+  projects: Array<object>;
+
+  constructor(private firebaseService: FirebaseService) {
+    this.firebaseService.getProjects()
+    .subscribe(res => {
+      this.projects = res;
+      console.log(this.projects)
+    })
+  }
 
   ngOnInit() {
   }
 
   toggleProjectVisibility() {
     if (this.projectVisible == false) {
-      return {"max-height": "0", "height": "0"}
+      return {"height": "0"}
     } else {
-      return {"max-height": "9000px", "height": "auto"}
+      return {"height": "auto"}
     }
   }
 

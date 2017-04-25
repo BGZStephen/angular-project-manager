@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
 import { FirebaseService } from "./services/firebase.service"
+import { FirebaseConfig } from "./firebaseconfig"
+import { AngularFireModule } from "angularfire2"
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -33,7 +35,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    router
+    router,
+    AngularFireModule.initializeApp(FirebaseConfig)
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

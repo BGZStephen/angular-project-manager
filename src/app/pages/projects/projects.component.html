@@ -1,120 +1,26 @@
 <div class="projects-container">
-  <div class="project-container">
+  <div class="project-container" *ngFor="let project of projects">
     <div class="project-title-container" (click)="projectVisible = !projectVisible">
       <a class="fa fa-plus project-toggle"></a>
-      <h2 class="project-title">Project Title</h2>
+      <h2 class="project-title">{{project.title}}</h2>
     </div>
     <div class="project-content-container" [ngStyle]="toggleProjectVisibility()">
       <div class="project-description-container">
-        <p class="project-description">Project Description</p>
+        <p class="project-description">{{project.description}}</p>
         <hr class="project-divider">
       </div>
       <div class="incomplete-items-container">
         <h3 class="incomplete-items-header">To do</h3>
         <hr class="project-divider">
         <ul class="incomplete-items-list">
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #1</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #2</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #3</li>
+          <li class="incomplete-item" *ngFor="let incompleteItem of project.incompleteItems"><a class="fa fa-square-o incomplete-list-marker"></a>{{incompleteItem.description}}</li>
         </ul>
       </div>
       <div class="complete-items-container">
         <h3 class="complete-items-header">Completed</h3>
         <hr class="project-divider">
         <ul class="complete-items-list">
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #1</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #2</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #3</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="project-container">
-    <div class="project-title-container" (click)="projectVisible = !projectVisible">
-      <a class="fa fa-plus project-toggle"></a>
-      <h2 class="project-title">Project Title</h2>
-    </div>
-    <div class="project-content-container" [ngStyle]="toggleProjectVisibility()">
-      <div class="project-description-container">
-        <p class="project-description">Project Description</p>
-        <hr class="project-divider">
-      </div>
-      <div class="incomplete-items-container">
-        <h3 class="incomplete-items-header">To do</h3>
-        <hr class="project-divider">
-        <ul class="incomplete-items-list">
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #1</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #2</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #3</li>
-        </ul>
-      </div>
-      <div class="complete-items-container">
-        <h3 class="complete-items-header">Completed</h3>
-        <hr class="project-divider">
-        <ul class="complete-items-list">
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #1</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #2</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #3</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="project-container">
-    <div class="project-title-container" (click)="projectVisible = !projectVisible">
-      <a class="fa fa-plus project-toggle"></a>
-      <h2 class="project-title">Project Title</h2>
-    </div>
-    <div class="project-content-container" [ngStyle]="toggleProjectVisibility()">
-      <div class="project-description-container">
-        <p class="project-description">Project Description</p>
-        <hr class="project-divider">
-      </div>
-      <div class="incomplete-items-container">
-        <h3 class="incomplete-items-header">To do</h3>
-        <hr class="project-divider">
-        <ul class="incomplete-items-list">
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #1</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #2</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #3</li>
-        </ul>
-      </div>
-      <div class="complete-items-container">
-        <h3 class="complete-items-header">Completed</h3>
-        <hr class="project-divider">
-        <ul class="complete-items-list">
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #1</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #2</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #3</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="project-container">
-    <div class="project-title-container" (click)="projectVisible = !projectVisible">
-      <a class="fa fa-plus project-toggle"></a>
-      <h2 class="project-title">Project Title</h2>
-    </div>
-    <div class="project-content-container" [ngStyle]="toggleProjectVisibility()">
-      <div class="project-description-container">
-        <p class="project-description">Project Description</p>
-        <hr class="project-divider">
-      </div>
-      <div class="incomplete-items-container">
-        <h3 class="incomplete-items-header">To do</h3>
-        <hr class="project-divider">
-        <ul class="incomplete-items-list">
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #1</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #2</li>
-          <li class="incomplete-item"><a class="fa fa-square-o incomplete-list-marker"></a>Incomplete Item #3</li>
-        </ul>
-      </div>
-      <div class="complete-items-container">
-        <h3 class="complete-items-header">Completed</h3>
-        <hr class="project-divider">
-        <ul class="complete-items-list">
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #1</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #2</li>
-          <li class="complete-item"><a class="fa fa-check-square-o complete-list-marker"></a>Complete Item #3</li>
+          <li class="complete-item" *ngFor="let completedItem of project.completedItems"><a class="fa fa-check-square-o complete-list-marker"></a>{{completedItem.description}}</li>
         </ul>
       </div>
     </div>

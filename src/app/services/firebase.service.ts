@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
+import { AngularFire } from "angularfire2"
 
 @Injectable()
 export class FirebaseService {
 
-  constructor() { }
+  constructor(private af: AngularFire) { }
+
+  getProjects() {
+    let projects = this.af.database.list('/projects');
+    return projects
+  }
 
 }
