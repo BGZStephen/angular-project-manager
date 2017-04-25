@@ -22,6 +22,7 @@
   transition: all 0.5s ease;
   visibility: hidden;
   width: 100%;
+  z-index: 100;
 }
 
 .navbar-left,
