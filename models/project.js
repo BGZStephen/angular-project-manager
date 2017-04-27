@@ -8,16 +8,20 @@ const ProjectSchema = mongoose.Schema({
     unique: true
   },
   user: {
-    type: Number
+    type: String,
+    required: true
   },
   title: {
-    type: String
+    type: String,
+    required: true
   },
   description: {
-    type: String
+    type: String,
+    required: true
   },
   createdAt: {
-    type: Date
+    type: String,
+    required: true
   },
   incompleteItems: {
     type: Array
@@ -28,3 +32,15 @@ const ProjectSchema = mongoose.Schema({
 });
 
 const Project = module.exports = mongoose.model('Project', ProjectSchema)
+
+module.exports.getProjectById = function(id, callback){
+  Project.findOne(id, callback);
+}
+
+module.exports.getProjectsByUser = function(userId, callback){
+  Project.find(userId, callback)
+}
+
+module.exports.addProject = function(projectObject, callback){
+  projectObject.save(callback)
+}
