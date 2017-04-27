@@ -3,10 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
-import { FirebaseService } from "./services/firebase.service"
-import { FirebaseConfig } from "./firebaseconfig"
-import { AngularFireModule } from "angularfire2"
-import { KeysPipe } from "./pipes/keys.pipe"
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -31,16 +27,14 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    KeysPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     router,
-    AngularFireModule.initializeApp(FirebaseConfig),
   ],
-  providers: [FirebaseService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

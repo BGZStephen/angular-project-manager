@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from "../../services/firebase.service"
 
 @Component({
   selector: 'app-projects',
@@ -11,31 +10,10 @@ export class ProjectsComponent implements OnInit {
   projectVisible: boolean = false;
   projects = [];
 
-  constructor(private firebaseService: FirebaseService) {
-    this.firebaseService.getProjects()
-    .subscribe(res => {
-      this.projects = res;
-      console.log(this.projects)
-    })
+  constructor() {
   }
 
   ngOnInit() {
-  }
-
-  hack(val) {
-    console.log(Array.from(val))
-    return Array.from(val);
-  }
-
-  deleteCompletedItem(itemIndex, projectKey) {
-    this.firebaseService.deleteCompletedItem(projectKey, itemIndex)
-  }
-
-  deleteIncompleteItem(itemIndex, projectKey) {
-    this.firebaseService.deleteIncompleteItem(projectKey, itemIndex)
-    // .subscribe(res => {
-    //   console.log(res)
-    // })
   }
 
   expandProject(index) {
