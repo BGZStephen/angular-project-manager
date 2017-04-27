@@ -8,12 +8,13 @@ const Project = require('../models/project');
 var projectIdCounter = 100;
 
 router.post('/add', (req, res, next) => {
+  let newDate = new Date().getTime()
   let newProject = new Project({
     id: projectIdCounter,
     user: req.body.user,
     title: req.body.title,
     description: req.body.description,
-    createdAt: req.body.createdAt,
+    createdAt: newDate,
     incompleteItems: req.body.incompleteItems,
     completedItems: req.body.completedItems,
   });
@@ -59,6 +60,59 @@ router.post('/user', (req, res, next) => {
       res.json(projects);
     }
     console.log(projects)
+  })
+})
+
+var iteamIdCountter = 100;
+
+router.post('/createitem', (req, res, next) => {
+  let newDate = new Date().getTime()
+  let query = {
+    container: "incompleteItems",
+    id: iteamIdCountter,
+    projectId: req.body.projectId,
+    description: req.body.description,
+    createdAt: newDate
+  }
+
+  Project.addItem(query, (err, item) => {
+    if(err){
+      res.json({success: false, msg:'Item not added'});
+    } else {
+      res.json({success: true, msg: item});
+    }
+  })
+  iteamIdCountter += 1;
+})
+
+router.post('/moveitem', (req, res, next) => {
+  let query = {
+    targetContainer: req.body.container,
+    id: req.body.id,
+    projectId: req.body.projectId,
+    description: req.body.description,
+    createdAt: req.body.createdAt
+  }
+
+  Project.moveItem(query, (err) => {
+    if(err){
+      res.json({success: false, msg:'Item not added'});
+    } else {
+      res.json({success: true, msg:'Item added'});
+    }
+  })
+})
+
+router.post('/deleteitem', (req, res, next) => {
+  let query = {
+    id: req.body.id,
+  }
+  Project.deleteItem(query, (err) => {
+    if(err){
+      res.json({success: false, msg:'Something went wrong, item not deleted'});
+    } else {
+      res.json({success: true, msg:'Item deleted'});
+    }
   })
 })
 

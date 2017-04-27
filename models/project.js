@@ -20,7 +20,7 @@ const ProjectSchema = mongoose.Schema({
     required: true
   },
   createdAt: {
-    type: String,
+    type: Number,
     required: true
   },
   incompleteItems: {
@@ -42,5 +42,17 @@ module.exports.getProjectsByUser = function(userId, callback){
 }
 
 module.exports.addProject = function(projectObject, callback){
+  projectObject.save(callback)
+}
+
+module.exports.addItem = function(itemObject, callback){
+  Project.update({id: itemObject.projectId},{'$push': {'incompleteItems': itemObject}}, callback)
+}
+
+module.exports.moveItem = function(projectObject, callback){
+  projectObject.save(callback)
+}
+
+module.exports.deleteItem = function(projectObject, callback){
   projectObject.save(callback)
 }
