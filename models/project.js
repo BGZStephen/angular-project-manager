@@ -3,7 +3,7 @@ const config = require('../config/database')
 
 // User Schema
 const ProjectSchema = mongoose.Schema({
-  id: {
+  projectId: {
     type: Number,
     unique: true
   },
@@ -23,12 +23,20 @@ const ProjectSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  incompleteItems: {
-    type: Array
-  },
-  completedItems: {
-    type: Array
-  }
+  incompleteItems: [{
+      container: String,
+      itemId: Number,
+      projectId: Number,
+      description: String,
+      createdAt: Number
+    }],
+  completedItems: [{
+    container: String,
+    itemId: Number,
+    projectId: Number,
+    description: String,
+    createdAt: Number
+  }],
 });
 
 const Project = module.exports = mongoose.model('Project', ProjectSchema)
@@ -46,13 +54,26 @@ module.exports.addProject = function(projectObject, callback){
 }
 
 module.exports.addItem = function(itemObject, callback){
-  Project.update({id: itemObject.projectId},{'$push': {'incompleteItems': itemObject}}, callback)
+  Project.update({'projectId': itemObject.projectId},{'$push': {'incompleteItems': itemObject}}, callback)
 }
 
-module.exports.moveItem = function(projectObject, callback){
-  projectObject.save(callback)
+// Check the taret container within the itemObject and move the item to the corresponding array within the project defined by projectId
+
+module.exports.moveItem = function(itemObject, callback){
+  if(itemObject.container == 'incompleteItems') {
+    Project.update({projectId: itemObject.projectId},{$push: {incompleteItems: itemObject}}, callback)
+  } else {
+    Project.update({projectId: itemObject.projectId},{$push: {completedItems: itemObject}}, callback)
+  }
 }
 
-module.exports.deleteItem = function(projectObject, callback){
-  projectObject.save(callback)
+// DO NOT USE THIS CALL FOR DELETING STANDALONE ITEMS
+// this precedes a moveItem call by deleting the item defined by itemId within its current array on the project.
+
+module.exports.deleteMovedItem = function(itemObject, callback){
+  if(itemObject.container == 'incompleteItems') {
+    Project.update({},{$pull: {completedItems: {itemId: itemObject.itemId}}}, callback)
+  } else {
+    Project.update({},{$pull: {incompleteItems: {itemId: itemObject.itemId}}}, callback)
+  }
 }

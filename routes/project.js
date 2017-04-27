@@ -10,7 +10,7 @@ var projectIdCounter = 100;
 router.post('/add', (req, res, next) => {
   let newDate = new Date().getTime()
   let newProject = new Project({
-    id: projectIdCounter,
+    projectId: projectIdCounter,
     user: req.body.user,
     title: req.body.title,
     description: req.body.description,
@@ -33,7 +33,7 @@ router.post('/add', (req, res, next) => {
 
 router.post('/id', (req, res, next) => {
   let query = {
-    id: req.body.id
+    projectId: req.body.id
   }
 
   Project.getProjectById(query, (err, project) => {
@@ -63,13 +63,13 @@ router.post('/user', (req, res, next) => {
   })
 })
 
-var iteamIdCountter = 100;
+var itemIdCounter = 100;
 
 router.post('/createitem', (req, res, next) => {
   let newDate = new Date().getTime()
   let query = {
     container: "incompleteItems",
-    id: iteamIdCountter,
+    itemId: itemIdCounter,
     projectId: req.body.projectId,
     description: req.body.description,
     createdAt: newDate
@@ -82,30 +82,36 @@ router.post('/createitem', (req, res, next) => {
       res.json({success: true, msg: item});
     }
   })
-  iteamIdCountter += 1;
+  itemIdCounter += 1;
 })
 
 router.post('/moveitem', (req, res, next) => {
   let query = {
-    targetContainer: req.body.container,
-    id: req.body.id,
+    container: req.body.container,
+    itemId: req.body.itemId,
     projectId: req.body.projectId,
     description: req.body.description,
     createdAt: req.body.createdAt
   }
 
-  Project.moveItem(query, (err) => {
+  Project.deleteMovedItem(query, (err) =>{
     if(err){
-      res.json({success: false, msg:'Item not added'});
+      res.json({success: false, msg:'Item failed deletion'});
     } else {
-      res.json({success: true, msg:'Item added'});
+      Project.moveItem(query, (err) => {
+        if(err){
+          res.json({success: false, msg:'Item not added'});
+        } else {
+          res.json({success: true, msg:'Item added'});
+        }
+      })
     }
   })
 })
 
 router.post('/deleteitem', (req, res, next) => {
   let query = {
-    id: req.body.id,
+    itemId: req.body.id,
   }
   Project.deleteItem(query, (err) => {
     if(err){
