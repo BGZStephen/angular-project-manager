@@ -6,6 +6,7 @@ import { router } from "./app.routes"
 import { FirebaseService } from "./services/firebase.service"
 import { FirebaseConfig } from "./firebaseconfig"
 import { AngularFireModule } from "angularfire2"
+import { KeysPipe } from "./pipes/keys.pipe"
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -29,14 +30,15 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     router,
-    AngularFireModule.initializeApp(FirebaseConfig)
+    AngularFireModule.initializeApp(FirebaseConfig),
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]

@@ -17,23 +17,27 @@ export class ProjectAddComponent implements OnInit {
     let taskArray = [];
     let createdDate = Date()
     if (projectTask1) {
-      let itemObject = {"description": projectTask1, "createdAt": createdDate}
+      let id = Math.floor(Math.random() * 1000000)
+      let itemObject = {"key": id, "description": projectTask1, "createdAt": createdDate}
       taskArray.push(itemObject)
     }
     if (projectTask2) {
-      let itemObject = {"description": projectTask2, "createdAt": createdDate}
+      let id = Math.floor(Math.random() * 1000000)
+      let itemObject = {"key": id, "description": projectTask2, "createdAt": createdDate}
       taskArray.push(itemObject)
     }
     if (projectTask3) {
-      let itemObject = {"description": projectTask3, "createdAt": createdDate}
+      let id = Math.floor(Math.random() * 1000000)
+      let itemObject = {"key": id, "description": projectTask3, "createdAt": createdDate}
       taskArray.push(itemObject)
     }
     if (projectTask4) {
-      let itemObject = {"description": projectTask4, "createdAt": createdDate}
+      let id = Math.floor(Math.random() * 1000000)
+      let itemObject = {"key": id, "description": projectTask4, "createdAt": createdDate}
       taskArray.push(itemObject)
     }
-    let projectObject = {"title": projectTitle, "description": projectDescription, "user": "Stephen", "createdAt": createdDate, incompleteItems: taskArray}
-    this.firebaseService.addProject(projectObject)
+    let projectObject = {"title": projectTitle, "description": projectDescription, "user": "Stephen", "createdAt": createdDate}
+    this.firebaseService.addProject(projectObject, taskArray)
   }
 
 }
