@@ -6,12 +6,14 @@ const Counter = require('../models/counter');
 
 // Add
 
-var projectIdCounter = 100;
-
 router.post('/add', (req, res, next) => {
-  let newDate = new Date().getTime()
+  let newDate = new Date().getTime();
+  let query = {};
+  let updateQuery = {};
+  let projectCounter = 100;
+
   let newProject = new Project({
-    projectId: projectIdCounter,
+    projectId: projectCounter,
     user: req.body.user,
     title: req.body.title,
     description: req.body.description,
@@ -20,14 +22,28 @@ router.post('/add', (req, res, next) => {
     completedItems: req.body.completedItems,
   });
 
-  Project.addProject(newProject, (err) => {
+  Counter.getCounter(query, (err, callback) => {
     if(err){
-      res.json({success: false, msg:'Failed to add project'});
+      res.json({success: false, msg:'Failed to get counter'});
     } else {
-      res.json({success: true, msg:'Project added'});
+      newProject.projectId = callback.projectCounter
+      Project.addProject(newProject, (err) => {
+        if(err){
+          res.json({success: false, msg:'Failed to add project'});
+        } else {
+          updatedCounter = callback.projectCounter +1
+          updateQuery = {projectCounter: updatedCounter}
+          Counter.updateCounter(updateQuery, (err) => {
+            if(err){
+              res.json({success: false, msg:'Failed to update counter'});
+            } else {
+              res.json({success: true, msg:'Project added'});
+            }
+          })
+        }
+      });
     }
-  });
-  projectIdCounter += 1;
+  })
 });
 
 //Find by ID
@@ -43,7 +59,6 @@ router.post('/id', (req, res, next) => {
     } else {
       res.json(project);
     }
-    console.log(project)
   })
 })
 

@@ -9,12 +9,12 @@ const CounterSchema = mongoose.Schema({
 
 const Counter = module.exports = mongoose.model('Counter', CounterSchema)
 
-module.exports.getCounter = function(counter, callback){
-  Counter.findOne(counter, callback);
+module.exports.getCounter = function(query, callback){
+  Counter.findOne({}, callback);
 }
 
-module.exports.updateCounter = function(counter, callback){
-  Counter.update(counter, callback);
+module.exports.updateCounter = function(updatedCounter, callback){
+  Counter.update(updatedCounter, callback);
 }
 
 // THIS SHOULD ONLY BE CALLED ONCE TO CREATE THE COUNTER, IF COMMENTED OUT, ASSUME ALREADY CREATED
