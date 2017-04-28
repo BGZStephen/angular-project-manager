@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const config = require('../config/database')
 
-// User Schema
+// Project Schema
 const ProjectSchema = mongoose.Schema({
   projectId: {
     type: Number,

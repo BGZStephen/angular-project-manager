@@ -25,8 +25,8 @@ const app = express()
 const users = require('./routes/users')
 // project routes
 const project = require('./routes/project')
-// projects routes
-const projects = require('./routes/projects')
+// project routes
+const counter = require('./routes/counter')
 
 // app port number
 const port = 3000
@@ -42,7 +42,7 @@ app.use(bodyParser.json())
 
 app.use('/users', users);
 app.use('/project', project);
-app.use('/projects', projects);
+app.use('/counter', counter);
 
 // index route
 app.get('/', (req, res) => {

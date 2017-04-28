@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
 const Project = require('../models/project');
+const Counter = require('../models/counter');
 
 // Add
 
@@ -19,7 +20,7 @@ router.post('/add', (req, res, next) => {
     completedItems: req.body.completedItems,
   });
 
-  Project.addProject(newProject, (err, user) => {
+  Project.addProject(newProject, (err) => {
     if(err){
       res.json({success: false, msg:'Failed to add project'});
     } else {
