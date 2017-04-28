@@ -83,7 +83,8 @@ var itemIdCounter = 100;
 
 router.post('/createitem', (req, res, next) => {
   let newDate = new Date().getTime()
-  let query = {
+  let query = {};
+  let newItem = {
     container: "incompleteItems",
     itemId: itemIdCounter,
     projectId: req.body.projectId,
@@ -91,14 +92,28 @@ router.post('/createitem', (req, res, next) => {
     createdAt: newDate
   }
 
-  Project.addItem(query, (err, item) => {
+  Counter.getCounter(query, (err, callback) => {
     if(err){
-      res.json({success: false, msg:'Item not added'});
+      res.json({success: false, msg:'Failed to get counter'});
     } else {
-      res.json({success: true, msg: item});
+      newItem.itemId = callback.itemCounter
+      Project.addItem(newItem, (err, item) => {
+        if(err){
+          res.json({success: false, msg:'Item not added'});
+        } else {
+          let updatedCounter = callback.itemCounter +1
+          updateQuery = {itemCounter: updatedCounter}
+          Counter.updateCounter(updateQuery, (err) => {
+            if(err){
+              res.json({success: false, msg:'Failed to update item counter'});
+            } else {
+              res.json({success: true, msg:'Item added'});
+            }
+          })
+        }
+      })
     }
   })
-  itemIdCounter += 1;
 })
 
 router.post('/moveitem', (req, res, next) => {
@@ -118,7 +133,7 @@ router.post('/moveitem', (req, res, next) => {
         if(err){
           res.json({success: false, msg:'Item not added'});
         } else {
-          res.json({success: true, msg:'Item added'});
+          res.json({success: true, msg:'Item moved'});
         }
       })
     }
