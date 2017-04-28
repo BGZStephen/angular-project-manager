@@ -4,7 +4,8 @@ const config = require('../config/database')
 // Counter Schema
 const CounterSchema = mongoose.Schema({
   projectCounter: Number,
-  itemCounter: Number
+  itemCounter: Number,
+  userCounter: Number
 });
 
 const Counter = module.exports = mongoose.model('Counter', CounterSchema)
@@ -18,7 +19,7 @@ module.exports.updateCounter = function(updatedCounter, callback){
 }
 
 // THIS SHOULD ONLY BE CALLED ONCE TO CREATE THE COUNTER, IF COMMENTED OUT, ASSUME ALREADY CREATED
-
+// 
 // module.exports.createCounter = function(counterObject, callback){
 //   counterObject.save(callback);
 // }

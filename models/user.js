@@ -21,10 +21,14 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  id: {
+  userId: {
     type: Number,
     unique: true
   }
 });
 
 const User = module.exports = mongoose.model('User', UserSchema)
+
+module.exports.addUser = function(userObject, callback){
+  userObject.save(callback)
+}

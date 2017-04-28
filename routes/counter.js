@@ -8,7 +8,8 @@ const Counter = require('../models/counter');
 router.post('/create', (req, res, next) => {
   let newCounter = new Counter({
     projectCounter: 0,
-    itemCounter: 0
+    itemCounter: 0,
+    userCounter: 0
   });
   Counter.createCounter(newCounter, (err) => {
     if(err){
