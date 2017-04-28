@@ -4,7 +4,7 @@ const config = require('../config/database');
 const User = require('../models/user')
 const Counter = require('../models/counter')
 
-// Profile
+// Register user & increment userCounter
 router.post('/register', (req, res, next) => {
   let query = {}
   let updatedCounter;
@@ -36,6 +36,44 @@ router.post('/register', (req, res, next) => {
           })
         }
       })
+    }
+  })
+})
+
+router.post('getbyid', (req, res, next) => {
+  let query = {
+    userId: req.body.userId
+  }
+
+  User.getUser(query, (err, callback) => {
+    if(err) {
+      res.json({success: false, msg: "User not found"})
+    } else {
+      res.json(callback)
+    }
+  })
+})
+
+router.post('getallusers', (req, res, next) => {
+  User.getUsers(query, (err, callback) => {
+    if(err) {
+      res.json({success: false, msg: "Could not retrieve users"})
+    } else {
+      res.json(callback)
+    }
+  })
+})
+
+router.post('deleteuser', (req, res, next) => {
+  let query = {
+    userId: req.body.userId
+  }
+
+  User.deleteUser(query, (err, callback) => {
+    if(err) {
+      res.json({success: false, msg: "User not found"})
+    } else {
+      res.json(callback)
     }
   })
 })

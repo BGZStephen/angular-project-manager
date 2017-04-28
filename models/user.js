@@ -32,3 +32,15 @@ const User = module.exports = mongoose.model('User', UserSchema)
 module.exports.addUser = function(userObject, callback){
   userObject.save(callback)
 }
+
+module.exports.deleteUser = function(query, callback){
+  User.findOne(query, callback).remove()
+}
+
+module.exports.getUser = function(query, callback){
+  User.findOne(query, callback)
+}
+
+module.exports.getUsers = function(query, callback){
+  User.find({}, callback)
+}
