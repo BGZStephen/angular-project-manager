@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
+const jwt = require('jsonwebtoken');
 const User = require('../models/user')
 const Counter = require('../models/counter')
 
@@ -40,7 +41,7 @@ router.post('/register', (req, res, next) => {
   })
 })
 
-router.post('getbyid', (req, res, next) => {
+router.post('/getbyid', (req, res, next) => {
   let query = {
     userId: req.body.userId
   }
@@ -54,7 +55,7 @@ router.post('getbyid', (req, res, next) => {
   })
 })
 
-router.post('getallusers', (req, res, next) => {
+router.post('/getallusers', (req, res, next) => {
   User.getUsers(query, (err, callback) => {
     if(err) {
       res.json({success: false, msg: "Could not retrieve users"})
@@ -64,7 +65,42 @@ router.post('getallusers', (req, res, next) => {
   })
 })
 
-router.post('deleteuser', (req, res, next) => {
+router.post('/authenticate', (req, res, next) => {
+  let query = {
+    username: req.body.username,
+    password: req.body.password
+  }
+
+  User.getUserByUsername(query, (err, user) => {
+    if(err) {
+      res.json({success: false, msg: "User not found"})
+    } else {
+      User.comparePassword(query.password, user.password, (err, isMatch) => {
+        if(err) throw err;
+        if(isMatch){
+          const token = jwt.sign(user, config.secret, {
+            expiresIn: 604800 // 1 week
+          });
+
+          res.json({
+            success: true,
+            token: 'JWT '+token,
+            user: {
+              userId: user.userId,
+              name: user.name,
+              username: user.username,
+              email: user.email
+            }
+          })
+        } else {
+          return res.json({success: false, msg: 'Wrong password'});
+        }
+      })
+    }
+  })
+})
+
+router.post('/deleteuser', (req, res, next) => {
   let query = {
     userId: req.body.userId
   }

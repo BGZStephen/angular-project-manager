@@ -30,7 +30,15 @@ const UserSchema = mongoose.Schema({
 const User = module.exports = mongoose.model('User', UserSchema)
 
 module.exports.addUser = function(userObject, callback){
-  userObject.save(callback)
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(userObject.password, salt, (err, hash) => {
+      if(err) {
+        throw(err)
+      }
+      userObject.password = hash;
+      userObject.save(callback)
+    })
+  })
 }
 
 module.exports.deleteUser = function(query, callback){
@@ -39,6 +47,17 @@ module.exports.deleteUser = function(query, callback){
 
 module.exports.getUser = function(query, callback){
   User.findOne(query, callback)
+}
+
+module.exports.getUserByUsername = function(query, callback){
+  User.findOne(query, callback)
+}
+
+module.exports.comparePassword = function(candidatePassword, hash, callback) {
+  bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
+    if(err) throw err
+    callback(null, isMatch)
+  })
 }
 
 module.exports.getUsers = function(query, callback){
