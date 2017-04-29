@@ -21,4 +21,9 @@ export class ApiService {
     return this.http.post("http://localhost:3000/users/deleteuser", query)
     .map(res => res.json())
   }
+
+  registerUser(userObject) {
+    return this.http.post("http://localhost:3000/users/register", userObject)
+    .map(res => res.json())
+  }
 }

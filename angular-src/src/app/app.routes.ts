@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
+import { RegisterComponent } from "./pages/register/register.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { AdminComponent } from "./pages/admin/admin.component";
 import { ProjectsComponent } from "./pages/projects/projects.component";
@@ -9,6 +10,7 @@ import { ProjectEditComponent } from "./pages/project/project-edit.component";
 
 const APP_ROUTES: Routes = [
   {path: "", component: HomeComponent},
+  {path: "register", component: RegisterComponent},
   {path: "login", component: LoginComponent},
   {path: "admin", component: AdminComponent},
   {path: "projects", component: ProjectsComponent},
