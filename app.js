@@ -35,7 +35,7 @@ const port = 3000
 app.use(cors())
 
 // static folder
-app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static(path.join(__dirname, 'public')))
 
 // body parser
 app.use(bodyParser.json())

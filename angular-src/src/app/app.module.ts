@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
+import { ApiService } from "./services/api.service"
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -34,7 +35,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     router,
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

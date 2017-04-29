@@ -3,11 +3,11 @@
     <ul class="navbar-list" (window:resize)="toggleVisibility('resize')" [ngStyle]="toggleVisibility()">
       <div class="navbar-left">
         <li class="navbar-item" [routerLink]="['/']">Home</li>
-        <li class="navbar-item" [routerLink]="['projects']">Projects</li>
-        <li class="navbar-item" [routerLink]="['projects/add']">Add Project</li>
+        <li class="navbar-item" [routerLink]="['/projects']">Projects</li>
+        <li class="navbar-item" [routerLink]="['/projects/add']">Add Project</li>
       </div>
       <div class="navbar-right">
-        <li class="navbar-item">Admin</li>
+        <li class="navbar-item" [routerLink]="['/admin']">Admin</li>
         <li class="navbar-item">Login</li>
         <li class="navbar-item">Logout</li>
       </div>

@@ -56,7 +56,7 @@ router.post('/getbyid', (req, res, next) => {
 })
 
 router.post('/getallusers', (req, res, next) => {
-  User.getUsers(query, (err, callback) => {
+  User.getUsers({}, (err, callback) => {
     if(err) {
       res.json({success: false, msg: "Could not retrieve users"})
     } else {
@@ -78,9 +78,11 @@ router.post('/authenticate', (req, res, next) => {
 
       // check password against stored has
       User.comparePassword(query.password, user.password, (err, isMatch) => {
-        if(err) throw err
+        if(err) {
+          res.json({success: false, msg: "Passwords didnt match"})
+        }
 
-        // if passwords match, create and return an object containing a web token and the user details to be used by the front end
+        // if passwords match, create and return an object contain
         if(isMatch){
           const token = jwt.sign(user, config.secret, {
             expiresIn: 604800 // 1 week
@@ -112,7 +114,7 @@ router.post('/deleteuser', (req, res, next) => {
     if(err) {
       res.json({success: false, msg: "User not found"})
     } else {
-      res.json(callback)
+      res.json({success: false, msg: "User deleted"})
     }
   })
 })

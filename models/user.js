@@ -42,7 +42,7 @@ module.exports.addUser = function(userObject, callback){
 }
 
 module.exports.deleteUser = function(query, callback){
-  User.findOne(query, callback).remove()
+  User.findOne(query, callback).remove().exec()
 }
 
 module.exports.getUser = function(query, callback){
