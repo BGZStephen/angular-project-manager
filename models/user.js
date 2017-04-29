@@ -49,8 +49,12 @@ module.exports.getUser = function(query, callback){
   User.findOne(query, callback)
 }
 
+module.exports.getUsers = function(query, callback){
+  User.find({}, callback)
+}
+
 module.exports.getUserByUsername = function(query, callback){
-  User.findOne(query, callback)
+  User.findOne({username: query.username}, callback)
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {
@@ -58,8 +62,4 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
     if(err) throw err
     callback(null, isMatch)
   })
-}
-
-module.exports.getUsers = function(query, callback){
-  User.find({}, callback)
 }

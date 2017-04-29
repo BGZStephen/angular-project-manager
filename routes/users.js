@@ -75,13 +75,16 @@ router.post('/authenticate', (req, res, next) => {
     if(err) {
       res.json({success: false, msg: "User not found"})
     } else {
+
+      // check password against stored has
       User.comparePassword(query.password, user.password, (err, isMatch) => {
-        if(err) throw err;
+        if(err) throw err
+
+        // if passwords match, create and return an object containing a web token and the user details to be used by the front end
         if(isMatch){
           const token = jwt.sign(user, config.secret, {
             expiresIn: 604800 // 1 week
           });
-
           res.json({
             success: true,
             token: 'JWT '+token,
