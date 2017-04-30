@@ -142,9 +142,10 @@ router.post('/moveitem', (req, res, next) => {
 
 router.post('/deleteitem', (req, res, next) => {
   let query = {
-    itemId: req.body.id,
+    container: req.body.container,
+    itemId: req.body.itemId,
   }
-  Project.deleteItem(query, (err) => {
+  Project.deleteMovedItem(query, (err) => {
     if(err){
       res.json({success: false, msg:'Something went wrong, item not deleted'});
     } else {

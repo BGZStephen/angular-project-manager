@@ -40,8 +40,17 @@ export class ProjectsComponent implements OnInit {
   }
 
   moveItem(itemObject, container) {
-    itemObject.container = container    
+    itemObject.container = container
     this.apiService.moveItem(itemObject)
+    .subscribe(res => {
+      console.log(res)
+      this.refreshProjects()
+    })
+  }
+
+  deleteItem(itemObject, container) {
+    itemObject.container = container
+    this.apiService.deleteItem(itemObject)
     .subscribe(res => {
       console.log(res)
       this.refreshProjects()

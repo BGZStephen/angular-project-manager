@@ -77,4 +77,9 @@ export class ApiService {
     return this.http.post("http://localhost:3000/project/moveItem", itemObject)
     .map(res => res.json())
   }
+
+  deleteItem(itemObject) {
+    return this.http.post("http://localhost:3000/project/deleteItem", itemObject)
+    .map(res => res.json())
+  }
 }
