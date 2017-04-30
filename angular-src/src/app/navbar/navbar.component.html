@@ -3,14 +3,14 @@
     <ul class="navbar-list" (window:resize)="toggleVisibility('resize')" [ngStyle]="toggleVisibility()">
       <div class="navbar-left">
         <li class="navbar-item" [routerLink]="['/']">Home</li>
-        <li class="navbar-item" [routerLink]="['/register']">Register</li>
-        <li class="navbar-item" [routerLink]="['/projects']">Projects</li>
-        <li class="navbar-item" [routerLink]="['/projects/add']">Add Project</li>
+        <li *ngIf="!apiService.loggedIn()" class="navbar-item" [routerLink]="['/register']">Register</li>
+        <li *ngIf="apiService.loggedIn()" class="navbar-item" [routerLink]="['/projects']">Projects</li>
+        <li *ngIf="apiService.loggedIn()" class="navbar-item" [routerLink]="['/projects/add']">Add Project</li>
       </div>
       <div class="navbar-right">
-        <li class="navbar-item" [routerLink]="['/admin']">Admin</li>
-        <li class="navbar-item">Login</li>
-        <li class="navbar-item">Logout</li>
+        <li *ngIf="apiService.loggedIn()" class="navbar-item" [routerLink]="['/admin']">Admin</li>
+        <li *ngIf="!apiService.loggedIn()" class="navbar-item" [routerLink]="['/login']">Login</li>
+        <li *ngIf="apiService.loggedIn()" class="navbar-item" (click)="logout()">Logout</li>
       </div>
     </ul>
     <div class="navbar-toggle-container" (click)="menuVisible = !menuVisible">

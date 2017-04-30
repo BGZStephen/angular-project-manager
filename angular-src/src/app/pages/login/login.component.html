@@ -1,3 +1,8 @@
-<p>
-  login works!
-</p>
+<div class="content-container">
+  <h2 class="login-header">Login</h2>
+  <form class="login-form">
+    <input type="text" name="username" placeholder="username" #username>
+    <input type="password" name="password" placeholder="password" #password>
+    <input type="submit" value="Login" (click)="login({'username': username.value, 'password': password.value})">
+  </form>
+</div>

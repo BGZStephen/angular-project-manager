@@ -3,11 +3,6 @@
   <form class="project-add-form">
     <input class="project-add-input" type="text" placeholder="Project Title" name="projectTitle" #projectTitle>
     <input class="project-add-input" type="text" placeholder="Project Description" name="projectDescription" #projectDescription>
-    <p class="project-add-task-header">Starting Tasks:</p>
-    <input class="project-add-input" type="text" placeholder="Task" name="projectTask1" #projectTask1>
-    <input class="project-add-input" type="text" placeholder="Task" name="projectTask2" #projectTask2>
-    <input class="project-add-input" type="text" placeholder="Task" name="projectTask3" #projectTask3>
-    <input class="project-add-input" type="text" placeholder="Task" name="projectTask4" #projectTask4>
-    <button class="project-add-submit" (click)="addProject(projectTitle.value, projectDescription.value, projectTask1.value, projectTask2.value, projectTask3.value, projectTask4.value)">Add</button>
+    <button class="project-add-submit" (click)="addProject({'title': projectTitle.value, 'description': projectDescription.value})">Add</button>
   </form>
 </div>

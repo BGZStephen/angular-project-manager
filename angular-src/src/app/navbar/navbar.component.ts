@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from "../services/api.service"
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
 
   menuVisible: boolean = false
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,10 @@ export class NavbarComponent implements OnInit {
     } else {
       return {"visibility": "hidden", "opacity": "0"}
     }
+  }
+
+  logout() {
+    this.apiService.logout()
   }
 
 }

@@ -7,8 +7,8 @@ const ProjectSchema = mongoose.Schema({
     type: Number,
     unique: true
   },
-  user: {
-    type: String,
+  userId: {
+    type: Number,
     required: true
   },
   title: {

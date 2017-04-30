@@ -14,12 +14,12 @@ router.post('/add', (req, res, next) => {
 
   let newProject = new Project({
     projectId: projectCounter,
-    user: req.body.user,
+    userId: parseInt(req.body.userId),
     title: req.body.title,
     description: req.body.description,
     createdAt: newDate,
-    incompleteItems: req.body.incompleteItems,
-    completedItems: req.body.completedItems,
+    incompleteItems: [],
+    completedItems: [],
   });
 
   Counter.getCounter(query, (err, callback) => {
