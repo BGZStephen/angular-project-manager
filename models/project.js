@@ -45,8 +45,8 @@ module.exports.getProjectById = function(id, callback){
   Project.findOne(id, callback);
 }
 
-module.exports.getProjectsByUser = function(userId, callback){
-  Project.find(userId, callback)
+module.exports.getProjectsByUser = function(id, callback){
+  Project.find(id, callback)
 }
 
 module.exports.addProject = function(projectObject, callback){
@@ -61,9 +61,9 @@ module.exports.addItem = function(itemObject, callback){
 
 module.exports.moveItem = function(itemObject, callback){
   if(itemObject.container == 'incompleteItems') {
-    Project.update({projectId: itemObject.projectId},{$push: {incompleteItems: itemObject}}, callback)
-  } else {
     Project.update({projectId: itemObject.projectId},{$push: {completedItems: itemObject}}, callback)
+  } else {
+    Project.update({projectId: itemObject.projectId},{$push: {incompleteItems: itemObject}}, callback)
   }
 }
 
@@ -72,8 +72,8 @@ module.exports.moveItem = function(itemObject, callback){
 
 module.exports.deleteMovedItem = function(itemObject, callback){
   if(itemObject.container == 'incompleteItems') {
-    Project.update({},{$pull: {completedItems: {itemId: itemObject.itemId}}}, callback)
-  } else {
     Project.update({},{$pull: {incompleteItems: {itemId: itemObject.itemId}}}, callback)
+  } else {
+    Project.update({},{$pull: {completedItems: {itemId: itemObject.itemId}}}, callback)
   }
 }

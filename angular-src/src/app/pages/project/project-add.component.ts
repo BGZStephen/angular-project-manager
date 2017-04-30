@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from "../../services/api.service"
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-project-add',
@@ -8,7 +9,7 @@ import { ApiService } from "../../services/api.service"
 })
 export class ProjectAddComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -16,7 +17,7 @@ export class ProjectAddComponent implements OnInit {
   addProject(projectObject) {
     this.apiService.addProject(projectObject)
     .subscribe(res => {
-      console.log(res)
     })
+    this.router.navigate(['/projects'])
   }
 }

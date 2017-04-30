@@ -60,4 +60,21 @@ export class ApiService {
     return this.http.post("http://localhost:3000/project/add", projectObject)
     .map(res => res.json())
   }
+
+  getProjectsByUser() {
+    let user = JSON.parse(localStorage.getItem('user'))
+    let projectObject = {userId: user.userId}
+    return this.http.post("http://localhost:3000/project/user", projectObject)
+    .map(res => res.json())
+  }
+
+  addProjectItem(itemObject) {
+    return this.http.post("http://localhost:3000/project/createItem", itemObject)
+    .map(res => res.json())
+  }
+
+  moveItem(itemObject) {
+    return this.http.post("http://localhost:3000/project/moveItem", itemObject)
+    .map(res => res.json())
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from "../services/api.service"
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   menuVisible: boolean = false
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,7 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.apiService.logout()
+    this.router.navigate(['/'])
   }
 
 }

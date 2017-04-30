@@ -121,6 +121,21 @@
   margin-right: 10px;
 }
 
+.actions-container {
+  padding: 10px;
+  width: 100%;
+}
+
+.actions-input {
+  margin: 10px 0;
+  padding: 5px
+}
+
+.actions-button {
+  margin: 10px 0;
+  padding: 5px;
+}
+
 @media (min-width: 768px) {
   .project-container {
     border-bottom: 5px solid #7f0000;

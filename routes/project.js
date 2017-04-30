@@ -66,7 +66,7 @@ router.post('/id', (req, res, next) => {
 
 router.post('/user', (req, res, next) => {
   let query = {
-    user: req.body.user
+    userId: req.body.userId
   }
 
   Project.getProjectsByUser(query, (err, projects) => {
