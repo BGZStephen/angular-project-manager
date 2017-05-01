@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router"
-import { ApiService } from "../../services/api.service"
+import { ProjectApiService } from "../../services/project-api.service"
 import { FlashMessagesService } from "angular2-flash-messages"
 
 @Component({
@@ -12,7 +12,7 @@ export class ProjectComponent implements OnInit {
 
   project: object;
 
-  constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute, private router: Router, private flashMessage: FlashMessagesService) {
+  constructor(private projectApiService: ProjectApiService, private activatedRoute: ActivatedRoute, private router: Router, private flashMessage: FlashMessagesService) {
 
   }
 
@@ -25,7 +25,7 @@ export class ProjectComponent implements OnInit {
     .map(params => params['id'])
     .subscribe((id) => {
       let query = {projectId: id}
-      this.apiService.getProjectById(query)
+      this.projectApiService.getProjectById(query)
       .subscribe(res => {
         this.project = res
       })
@@ -33,7 +33,7 @@ export class ProjectComponent implements OnInit {
   }
 
   deleteProject(projectObject) {
-    this.apiService.deleteProject(projectObject)
+    this.projectApiService.deleteProject(projectObject)
     .subscribe(res => {
       this.router.navigate(['/projects'])
       this.flashMessage.show('Project Deleted', {cssClass: "message-success", timeout: 1500})
@@ -41,7 +41,7 @@ export class ProjectComponent implements OnInit {
   }
 
   addItem(itemObject) {
-    this.apiService.addProjectItem(itemObject)
+    this.projectApiService.addProjectItem(itemObject)
     .subscribe(res => {
       this.refreshProject()
     })
@@ -49,7 +49,7 @@ export class ProjectComponent implements OnInit {
 
   moveItem(itemObject, container) {
     itemObject.container = container
-    this.apiService.moveItem(itemObject)
+    this.projectApiService.moveItem(itemObject)
     .subscribe(res => {
       this.refreshProject()
     })
@@ -57,7 +57,7 @@ export class ProjectComponent implements OnInit {
 
   deleteItem(itemObject, container) {
     itemObject.container = container
-    this.apiService.deleteItem(itemObject)
+    this.projectApiService.deleteItem(itemObject)
     .subscribe(res => {
       this.refreshProject()
     })

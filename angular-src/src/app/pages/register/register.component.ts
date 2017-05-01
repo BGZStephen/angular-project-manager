@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../../services/api.service"
+import { UserApiService } from "../../services/user-api.service"
 import { FlashMessagesService } from "angular2-flash-messages"
 import { Router } from "@angular/router"
 
@@ -10,13 +10,13 @@ import { Router } from "@angular/router"
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private apiSevice: ApiService, private flashMessage: FlashMessagesService, private router: Router) { }
+  constructor(private userApiService: UserApiService, private flashMessage: FlashMessagesService, private router: Router) { }
 
   ngOnInit() {
   }
 
   registerUser(usreObject){
-      this.apiSevice.registerUser(usreObject)
+      this.userApiService.registerUser(usreObject)
       .subscribe(res => {
         console.log(res)
         if(res.success) {

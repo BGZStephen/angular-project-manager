@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../../services/api.service"
+import { ProjectApiService } from "../../services/project-api.service"
 import { FlashMessagesService } from "angular2-flash-messages"
 
 @Component({
@@ -12,7 +12,7 @@ export class ProjectsComponent implements OnInit {
   projectVisible: boolean = false;
   projects = [];
 
-  constructor(private apiService: ApiService, private flashMessage: FlashMessagesService) {
+  constructor(private projectApiService: ProjectApiService, private flashMessage: FlashMessagesService) {
   }
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   refreshProjects() {
-    this.apiService.getProjectsByUser()
+    this.projectApiService.getProjectsByUser()
     .subscribe(res => {
       this.projects = res;
     })
@@ -33,7 +33,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   deleteProject(projectObject) {
-    this.apiService.deleteProject(projectObject)
+    this.projectApiService.deleteProject(projectObject)
     .subscribe(res => {
       this.flashMessage.show('Project Deleted', {cssClass: "message-success", timeout: 1500})
     })

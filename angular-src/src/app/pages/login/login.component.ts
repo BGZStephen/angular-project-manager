@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../../services/api.service"
+import { UserApiService } from "../../services/user-api.service"
 import { Router } from "@angular/router"
 import { FlashMessagesService } from "angular2-flash-messages"
 
@@ -10,17 +10,17 @@ import { FlashMessagesService } from "angular2-flash-messages"
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router: Router, private flashMessage: FlashMessagesService) { }
+  constructor(private userApiService: UserApiService, private router: Router, private flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
   }
 
   login(loginObject) {
     console.log("working")
-    this.apiService.authenticate(loginObject)
+    this.userApiService.authenticate(loginObject)
     .subscribe(res => {
       if(res.success) {
-        this.apiService.storeUserData(res.token, res.user)
+        this.userApiService.storeUserData(res.token, res.user)
         this.flashMessage.show('Login successful', {cssClass: "message-success", timeout: 1000})
         this.router.navigate(['/projects'])
       } else {

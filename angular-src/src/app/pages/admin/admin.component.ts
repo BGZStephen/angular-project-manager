@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../../services/api.service"
+import { UserApiService } from "../../services/user-api.service"
 import "rxjs/Rx"
 
 @Component({
@@ -9,25 +9,25 @@ import "rxjs/Rx"
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private apiSevice: ApiService) {
+  constructor(private userApiService: UserApiService) {
   }
 
   getAllUsers() {
-    this.apiSevice.getAllUsers()
+    this.userApiService.getAllUsers()
     .subscribe(res => {
     })
   }
 
   getUserById(id) {
     let query = {userId: id}
-    this.apiSevice.getUserById(query)
+    this.userApiService.getUserById(query)
     .subscribe(res => {
     })
   }
 
   deleteUser(id) {
     let query = {userId: id}
-    this.apiSevice.deleteUser(query)
+    this.userApiService.deleteUser(query)
     .subscribe(res => {
     })
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../../services/api.service"
+import { ProjectApiService } from "../../services/project-api.service"
 import { Router } from "@angular/router"
 
 @Component({
@@ -9,13 +9,13 @@ import { Router } from "@angular/router"
 })
 export class ProjectAddComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private projectApiService: ProjectApiService, private router: Router) { }
 
   ngOnInit() {
   }
 
   addProject(projectObject) {
-    this.apiService.addProject(projectObject)
+    this.projectApiService.addProject(projectObject)
     .subscribe(res => {
       this.router.navigate(['/projects'])
     })

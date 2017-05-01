@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
-import { ApiService } from "./services/api.service"
+import { UserApiService } from "./services/user-api.service"
+import { ProjectApiService } from "./services/project-api.service"
 import { FlashMessagesModule } from "angular2-flash-messages"
 
 import { AppComponent } from './app.component';
@@ -39,7 +40,7 @@ import { RegisterComponent } from './pages/register/register.component';
     router,
     FlashMessagesModule
   ],
-  providers: [ApiService],
+  providers: [UserApiService, ProjectApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

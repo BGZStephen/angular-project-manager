@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "../services/api.service"
+import { UserApiService } from "../services/user-api.service"
 import { Router } from "@angular/router"
 import { FlashMessagesService } from "angular2-flash-messages"
 
@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   menuVisible: boolean = false
 
-  constructor(private apiService: ApiService, private router: Router, private flashMessage: FlashMessagesService) { }
+  constructor(private userApiService: UserApiService, private router: Router, private flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
   }
@@ -38,7 +38,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.apiService.logout()
+    this.userApiService.logout()
     this.flashMessage.show('Logout Successful', {cssClass: "message-success", timeout: 3000})
     this.router.navigate(['/'])
   }
