@@ -17,6 +17,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  menuToggle() {
+    if(screen.width < 768) {
+      this.menuVisible = !this.menuVisible
+    }
+  }
+
   toggleVisibility(resize?) {
     if(resize && screen.width < 768) {
       this.menuVisible = false;

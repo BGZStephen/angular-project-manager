@@ -45,6 +45,10 @@ module.exports.getProjectById = function(id, callback){
   Project.findOne(id, callback);
 }
 
+module.exports.deleteProjectById = function(id, callback){
+  Project.findOne(id, callback).remove().exec();
+}
+
 module.exports.getProjectsByUser = function(id, callback){
   Project.find(id, callback)
 }

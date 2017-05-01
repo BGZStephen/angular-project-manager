@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from "../../services/api.service"
+import { FlashMessagesService } from "angular2-flash-messages"
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +12,7 @@ export class ProjectsComponent implements OnInit {
   projectVisible: boolean = false;
   projects = [];
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private flashMessage: FlashMessagesService) {
   }
 
   ngOnInit() {
@@ -31,6 +32,11 @@ export class ProjectsComponent implements OnInit {
     // projects[index].classList.toggle("project-content-container-visible")
   }
 
-
+  deleteProject(projectObject) {
+    this.apiService.deleteProject(projectObject)
+    .subscribe(res => {
+      this.flashMessage.show('Project Deleted', {cssClass: "message-success", timeout: 1500})
+    })
+  }
 
 }

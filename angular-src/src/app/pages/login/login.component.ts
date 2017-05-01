@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginObject) {
+    console.log("working")
     this.apiService.authenticate(loginObject)
     .subscribe(res => {
       if(res.success) {

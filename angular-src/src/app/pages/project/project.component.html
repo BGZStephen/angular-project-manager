@@ -3,6 +3,7 @@
     <div class="project-title-container">
       <a class="fa fa-plus project-toggle"></a>
       <h2 class="project-title">{{project.title}}</h2>
+      <a class="fa fa-trash-o project-delete" (click)="deleteProject({'projectId': project.projectId})"></a>
     </div>
     <div class="project-content-container">
       <div class="project-description-container">
@@ -18,7 +19,7 @@
       </div>
       <div class="actions-container">
         <input type="text" class="actions-input" placeholder="Item description" #item (keyup)="0">
-        <button class="actions-button" [disabled]="item.value.length < 1" (click)="addItem({'description': item.value, 'projectId': project.projectId})">Add Item</button>
+        <button class="actions-button" [disabled]="item.value.length < 1" (click)="addItem({'description': item.value, 'projectId': project.projectId}); item.value=''">Add Item</button>
       </div>
       <div class="complete-items-container">
         <h3 class="complete-items-header">Completed</h3>

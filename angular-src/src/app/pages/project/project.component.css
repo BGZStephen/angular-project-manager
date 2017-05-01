@@ -34,6 +34,13 @@
   padding: 10px 10px;
 }
 
+.project-delete {
+  color: white;
+  margin-left: auto;
+  margin-right: 5px;
+  padding: 10px 10px;
+}
+
 .project-title {
   color: white;
   font-size: 1.2em;

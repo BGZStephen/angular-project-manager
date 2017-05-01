@@ -46,6 +46,20 @@ router.post('/add', (req, res, next) => {
   })
 });
 
+router.post('/delete', (req, res, next) => {
+  let query = {
+    projectId: req.body.projectId
+  }
+
+  Project.deleteProjectById(query, (err, project) => {
+    if(err){
+      res.json({success: false, msg:'Project not found'});
+    } else {
+      res.json({success: true, msg:'Project deleted'});
+    }
+  })
+})
+
 //Find by ID
 
 router.post('/id', (req, res, next) => {

@@ -15,7 +15,6 @@ export class AdminComponent implements OnInit {
   getAllUsers() {
     this.apiSevice.getAllUsers()
     .subscribe(res => {
-      console.log(res)
     })
   }
 
@@ -23,7 +22,6 @@ export class AdminComponent implements OnInit {
     let query = {userId: id}
     this.apiSevice.getUserById(query)
     .subscribe(res => {
-      console.log(res)
     })
   }
 
@@ -31,7 +29,6 @@ export class AdminComponent implements OnInit {
     let query = {userId: id}
     this.apiSevice.deleteUser(query)
     .subscribe(res => {
-      console.log(res)
     })
   }
 
