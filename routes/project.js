@@ -50,7 +50,7 @@ router.post('/add', (req, res, next) => {
 
 router.post('/id', (req, res, next) => {
   let query = {
-    projectId: req.body.id
+    projectId: req.body.projectId
   }
 
   Project.getProjectById(query, (err, project) => {

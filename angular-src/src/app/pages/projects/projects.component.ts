@@ -31,30 +31,6 @@ export class ProjectsComponent implements OnInit {
     // projects[index].classList.toggle("project-content-container-visible")
   }
 
-  addItem(itemObject) {
-    this.apiService.addProjectItem(itemObject)
-    .subscribe(res => {
-      console.log(res)
-      this.refreshProjects()
-    })
-  }
 
-  moveItem(itemObject, container) {
-    itemObject.container = container
-    this.apiService.moveItem(itemObject)
-    .subscribe(res => {
-      console.log(res)
-      this.refreshProjects()
-    })
-  }
-
-  deleteItem(itemObject, container) {
-    itemObject.container = container
-    this.apiService.deleteItem(itemObject)
-    .subscribe(res => {
-      console.log(res)
-      this.refreshProjects()
-    })
-  }
 
 }

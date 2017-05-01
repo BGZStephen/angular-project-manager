@@ -68,6 +68,11 @@ export class ApiService {
     .map(res => res.json())
   }
 
+  getProjectById(query) {
+    return this.http.post("http://localhost:3000/project/id", query)
+    .map(res => res.json())
+  }
+
   addProjectItem(itemObject) {
     return this.http.post("http://localhost:3000/project/createItem", itemObject)
     .map(res => res.json())

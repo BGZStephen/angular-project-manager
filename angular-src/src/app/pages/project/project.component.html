@@ -1,3 +1,32 @@
-<p>
-  project works!
-</p>
+<div class="projects-container">
+  <div class="project-container" *ngIf="project">
+    <div class="project-title-container">
+      <a class="fa fa-plus project-toggle"></a>
+      <h2 class="project-title">{{project.title}}</h2>
+    </div>
+    <div class="project-content-container">
+      <div class="project-description-container">
+        <p class="project-description">{{project.description}}</p>
+        <hr class="project-divider">
+      </div>
+      <div class="incomplete-items-container">
+        <h3 class="incomplete-items-header">To do</h3>
+        <hr class="project-divider">
+        <ul class="incomplete-items-list">
+          <li class="incomplete-item" *ngFor="let incompleteItem of project.incompleteItems; let incompleteItemIndex = index"><a class="fa fa-trash-o incomplete-list-marker" (click)="deleteItem(incompleteItem, 'incompleteItems')"></a><a class="fa fa-square-o incomplete-list-marker" (click)="moveItem(incompleteItem, 'incompleteItems')"></a>{{incompleteItem.description}}</li>
+        </ul>
+      </div>
+      <div class="actions-container">
+        <input type="text" class="actions-input" placeholder="Item description" #item (keyup)="0">
+        <button class="actions-button" [disabled]="item.value.length < 1" (click)="addItem({'description': item.value, 'projectId': project.projectId})">Add Item</button>
+      </div>
+      <div class="complete-items-container">
+        <h3 class="complete-items-header">Completed</h3>
+        <hr class="project-divider">
+        <ul class="complete-items-list">
+          <li class="complete-item" *ngFor="let completedItem of project.completedItems; let completedItemIndex = index"><a class="fa fa-trash-o complete-list-marker" (click)="deleteItem(completedItem, 'completedItems')"></a><a class="fa fa-check-square-o complete-list-marker" (click)="moveItem(completedItem, 'completedItems')"></a><p class="complete-item-description">{{completedItem.description}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

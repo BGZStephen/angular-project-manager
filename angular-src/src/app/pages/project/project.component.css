@@ -1,0 +1,158 @@
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.project-container {
+  background: white;
+  border-bottom: 5px solid #7f0000;
+  border-top: 5px solid #7f0000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.project-divider {
+  width: 50%;
+  border-top: 1px solid #7f0000;
+  margin: 10px 0;
+}
+
+.project-title-container {
+  background: #7f0000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.project-toggle {
+  color: white;
+  margin-left: 5px;
+  padding: 10px 10px;
+}
+
+.project-title {
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 5px;
+}
+
+.project-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background: white;
+  overflow: hidden;
+}
+
+.project-content-container-visible {
+  height: auto !important;
+}
+
+.project-description-container {
+  padding: 10px;
+  width: 100%;
+}
+
+.project-description {
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.incomplete-items-container {
+  padding: 0 10px;
+  width: 100%;
+}
+
+.incomplete-items-header {
+  font-size: 1em;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.incomplete-items-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.incomplete-item {
+  display: flex;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.complete-items-container {
+  padding: 10px;
+}
+
+.complete-items-header {
+  font-size: 1em;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.complete-items-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.complete-item {
+  align-items: center;
+  color: #333;
+  display: flex;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.complete-item-description {
+  text-decoration: line-through;
+}
+
+.incomplete-list-marker {
+  margin-right: 10px;
+}
+
+.complete-list-marker {
+  margin-right: 10px;
+}
+
+.actions-container {
+  padding: 10px;
+  width: 100%;
+}
+
+.actions-input {
+  margin: 10px 0;
+  padding: 5px
+}
+
+.actions-button {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+@media (min-width: 768px) {
+  .project-container {
+    border-bottom: 5px solid #7f0000;
+    border-top: 5px solid #7f0000;
+    border-radius: 5px;
+    margin: 0 5px 15px 5px;
+    position: relative;
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-container {
+    border-bottom: 5px solid #7f0000;
+    border-top: 5px solid #7f0000;
+    border-radius: 5px;
+    margin: 0 5px 15px 5px;
+    position: relative;
+    width: calc((100% - 30px) / 3);
+  }
+}

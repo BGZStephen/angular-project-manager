@@ -17,7 +17,7 @@ export class ProjectAddComponent implements OnInit {
   addProject(projectObject) {
     this.apiService.addProject(projectObject)
     .subscribe(res => {
+      this.router.navigate(['/projects'])
     })
-    this.router.navigate(['/projects'])
   }
 }
