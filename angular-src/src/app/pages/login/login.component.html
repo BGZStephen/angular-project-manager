@@ -1,8 +1,8 @@
 <div class="content-container">
   <h2 class="login-header">Login</h2>
   <form class="login-form">
-    <input type="text" name="username" placeholder="username" #username>
-    <input type="password" name="password" placeholder="password" #password>
-    <input type="submit" value="Login" (click)="login({'username': username.value, 'password': password.value})">
+    <input class="login-input" type="text" name="username" placeholder="username" #username>
+    <input class="login-input" type="password" name="password" placeholder="password" #password>
+    <input class="login-button" type="submit" value="Login" (click)="login({'username': username.value, 'password': password.value})">
   </form>
 </div>

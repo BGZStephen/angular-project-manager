@@ -49,8 +49,8 @@
   margin-right: 10px;
 }
 
-.navbar-toggle-description {
-
+.navbar-logo {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -89,5 +89,13 @@
 
   .navbar-toggle-container {
     display: none;
+  }
+
+  .navbar-logo {
+    color: white;
+    display: block;
+    font-size: 1.3em;
+    padding: 15px;
+    width: auto;
   }
 }

@@ -1,1 +1,10 @@
-<p>Home</p>
+<div class="home-content-container">
+  <h1>Welcome to the MEAN Project Management Application</h1>
+  <p>To get started, hit register to create an account</p>
+  <p>The app will allow you to add projects, manage associated to do lists and check off completed items</p>
+  <p>All projects are unique to you and will not be visible to other users.</p>
+  <div class="home-button-container">
+    <button class="register-button" [routerLink]="['/register']">Register</button>
+    <button class="login-button" [routerLink]="['/login']">Login</button>
+  </div>
+</div>
