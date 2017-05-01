@@ -33,6 +33,7 @@
 
 .navbar-item {
   color: white;
+  cursor: pointer;
   padding: 15px;
   width: 100%;
 }
@@ -46,10 +47,12 @@
 }
 
 .navbar-toggle-logo {
+  cursor: pointer;
   margin-right: 10px;
 }
 
 .navbar-logo {
+  cursor: pointer;
   display: none;
 }
 

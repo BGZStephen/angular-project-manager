@@ -26,3 +26,8 @@
 .social-item {
   padding: 15px 10px;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}

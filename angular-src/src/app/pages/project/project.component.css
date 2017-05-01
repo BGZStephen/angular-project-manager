@@ -30,12 +30,14 @@
 
 .project-toggle {
   color: white;
+  cursor: pointer;
   margin-left: 5px;
   padding: 10px 10px;
 }
 
 .project-delete {
   color: white;
+  cursor: pointer;
   margin-left: auto;
   margin-right: 5px;
   padding: 10px 10px;
@@ -87,6 +89,7 @@
 }
 
 .incomplete-item {
+  cursor: pointer;
   display: flex;
   width: 100%;
   padding: 5px 0;
@@ -110,6 +113,7 @@
 .complete-item {
   align-items: center;
   color: #333;
+  cursor: pointer;
   display: flex;
   padding: 5px 0;
   width: 100%;

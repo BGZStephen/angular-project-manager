@@ -14,7 +14,7 @@
         <h3 class="incomplete-items-header">To do</h3>
         <hr class="project-divider">
         <ul class="incomplete-items-list">
-          <li class="incomplete-item" *ngFor="let incompleteItem of project.incompleteItems; let incompleteItemIndex = index"><a class="fa fa-trash-o incomplete-list-marker" (click)="deleteItem(incompleteItem, 'incompleteItems')"></a><a class="fa fa-square-o incomplete-list-marker" (click)="moveItem(incompleteItem, 'incompleteItems')"></a>{{incompleteItem.description}}</li>
+          <li class="incomplete-item" *ngFor="let incompleteItem of project.incompleteItems; let incompleteItemIndex = index"><a class="fa fa-trash-o incomplete-list-marker" (click)="deleteItem(incompleteItem, 'incompleteItems')"></a><a class="fa fa-square-o incomplete-list-marker" (click)="moveItem(incompleteItem, 'incompleteItems')"></a><p (click)="moveItem(incompleteItem, 'incompleteItems')">{{incompleteItem.description}}</p></li>
         </ul>
       </div>
       <div class="actions-container">
@@ -25,7 +25,7 @@
         <h3 class="complete-items-header">Completed</h3>
         <hr class="project-divider">
         <ul class="complete-items-list">
-          <li class="complete-item" *ngFor="let completedItem of project.completedItems; let completedItemIndex = index"><a class="fa fa-trash-o complete-list-marker" (click)="deleteItem(completedItem, 'completedItems')"></a><a class="fa fa-check-square-o complete-list-marker" (click)="moveItem(completedItem, 'completedItems')"></a><p class="complete-item-description">{{completedItem.description}}</li>
+          <li class="complete-item" *ngFor="let completedItem of project.completedItems; let completedItemIndex = index"><a class="fa fa-trash-o complete-list-marker" (click)="deleteItem(completedItem, 'completedItems')"></a><a class="fa fa-check-square-o complete-list-marker" (click)="moveItem(completedItem, 'completedItems')"></a><p class="complete-item-description"><p (click)="moveItem(completedItem, 'completedItems')">{{completedItem.description}}</p></li>
         </ul>
       </div>
     </div>

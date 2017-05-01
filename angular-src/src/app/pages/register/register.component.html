@@ -1,8 +1,8 @@
 <h2 class="register-header">Register</h2>
 <form class="register-form">
-  <input type="text" name="name" #name placeholder="Name" class="register-input">
-  <input type="text" name="username" #username placeholder="Username" class="register-input">
-  <input type="text" name="email" #email placeholder="Email" class="register-input">
-  <input type="password" name="password" #password placeholder="Password" class="register-input">
-  <input type="submit" value="Register" (click)="registerUser({'name': name.value, 'username': username.value, 'email': email.value, 'password': password.value})" class="register-button">
+  <input type="text" name="name" #name placeholder="Name" class="register-input" (keyup)="0">
+  <input type="text" name="username" #username placeholder="Username" class="register-input" (keyup)="0">
+  <input type="text" name="email" #email placeholder="Email" class="register-input" (keyup)="0">
+  <input type="password" name="password" #password placeholder="Password" class="register-input" (keyup)="0">
+  <input type="submit" value="Register" [disabled]="name.value.length < 3 || username.value.length < 3 || email.value.length < 3 || password.value.length < 3" (click)="registerUser({'name': name.value, 'username': username.value, 'email': email.value, 'password': password.value})" class="register-button">
 </form>
