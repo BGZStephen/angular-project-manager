@@ -1,0 +1,84 @@
+{
+  "projects": [
+    {
+      "createdAt": "Tue Apr 25 2017 12:20:46 GMT+0100 (BST)",
+      "user": "Stephen",
+      "title": "Test Project 1",
+      "description": "Test Description 1",
+      "incompleteItems": [
+        {"createdAt": "", "description": "Test Incomplete Item 1"}
+      ],
+      "completedItems": [
+        {"createdAt": "", "description": "Test Complete Item 1"}
+      ]
+    },
+    {
+      "createdAt": "Tue Apr 25 2017 12:20:46 GMT+0100 (BST)",
+      "user": "Stephen",
+      "title": "Test Project 2",
+      "description": "Test Description 2",
+      "incompleteItems": [
+        {"createdAt": "", "description": "Test Incomplete Item 1"},
+        {"createdAt": "", "description": "Test Incomplete Item 2"}
+      ],
+      "completedItems": [
+        {"createdAt": "", "description": "Test Complete Item 1"},
+        {"createdAt": "", "description": "Test Complete Item 2"}
+      ]
+    },
+    {
+      "createdAt": "Tue Apr 25 2017 12:20:46 GMT+0100 (BST)",
+      "user": "Stephen",
+      "title": "Test Project 3",
+      "description": "Test Description 3",
+      "incompleteItems": [
+        {"createdAt": "", "description": "Test Incomplete Item 1"},
+        {"createdAt": "", "description": "Test Incomplete Item 2"},
+        {"createdAt": "", "description": "Test Incomplete Item 3"}
+      ],
+      "completedItems": [
+        {"createdAt": "", "description": "Test Complete Item 1"},
+        {"createdAt": "", "description": "Test Complete Item 2"},
+        {"createdAt": "", "description": "Test Complete Item 3"}
+      ]
+    },
+    {
+      "createdAt": "Tue Apr 25 2017 12:20:46 GMT+0100 (BST)",
+      "user": "Stephen",
+      "title": "Test Project 4",
+      "description": "Test Description 4",
+      "incompleteItems": [
+        {"createdAt": "", "description": "Test Incomplete Item 1"},
+        {"createdAt": "", "description": "Test Incomplete Item 2"},
+        {"createdAt": "", "description": "Test Incomplete Item 3"},
+        {"createdAt": "", "description": "Test Incomplete Item 4"}
+      ],
+      "completedItems": [
+        {"createdAt": "", "description": "Test Complete Item 1"},
+        {"createdAt": "", "description": "Test Complete Item 2"},
+        {"createdAt": "", "description": "Test Complete Item 3"},
+        {"createdAt": "", "description": "Test Complete Item 4"}
+      ]
+    }
+  ],
+  "users": [
+    {
+      "createdAt": "",
+      "username": "",
+      "firstName": "",
+      "lastName": ""
+    },
+    {
+      "createdAt": "",
+      "username": "",
+      "firstName": "",
+      "lastName": ""
+    },
+    {
+      "createdAt": "",
+      "username": "",
+      "firstName": "",
+      "lastName": ""
+    }
+  ]
+}
