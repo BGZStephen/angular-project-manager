@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from "../../services/api.service"
 import { Router } from "@angular/router"
+import { FlashMessagesService } from "angular2-flash-messages"
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from "@angular/router"
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router, private flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
   }
@@ -19,10 +20,10 @@ export class LoginComponent implements OnInit {
     .subscribe(res => {
       if(res.success) {
         this.apiService.storeUserData(res.token, res.user)
-        console.log("Login successful")
+        this.flashMessage.show('Login successful', {cssClass: "message-success", timeout: 1000})
         this.router.navigate(['/projects'])
       } else {
-        console.log("Unable to log in")
+        this.flashMessage.show('Incorrect username or password', {cssClass: "message-failure", timeout: 1500})
       }
     })
   }

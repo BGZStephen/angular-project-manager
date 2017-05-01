@@ -11,6 +11,17 @@
   width: 100%;
 }
 
+.flash-messages-container {
+  width: 100%;
+}
+
 app-footer { /* Force footer to bottom */
   margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .flash-messages-container {
+    margin: 0 auto;
+    width: 30%;
+  }
 }

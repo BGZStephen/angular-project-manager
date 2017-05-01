@@ -6,3 +6,25 @@
   box-sizing: border-box;
   font-family: arial;
 }
+
+.message-success {
+  background: green;
+  border-radius: 10px;
+  color: white;
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+.message-failure {
+  background: red;
+  border-radius: 10px;
+  color: white;
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}

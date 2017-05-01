@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
 import { ApiService } from "./services/api.service"
+import { FlashMessagesModule } from "angular2-flash-messages"
 
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -36,6 +37,7 @@ import { RegisterComponent } from './pages/register/register.component';
     FormsModule,
     HttpModule,
     router,
+    FlashMessagesModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
