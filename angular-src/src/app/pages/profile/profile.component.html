@@ -1,0 +1,37 @@
+<div class="content-container">
+  <h2>Profile</h2>
+  <div class="profile-container" *ngIf="profile">
+    <div class="profile-row">
+      <div class="profile-left">
+        <p>Name: </p>
+      </div>
+      <div class="profile-right">
+        <p>{{profile.name}}<a>Change</a>
+      </div>
+    </div>
+    <div class="profile-row">
+      <div class="profile-left">
+        <p>Username: </p>
+      </div>
+      <div class="profile-right">
+        {{profile.username}}
+      </div>
+    </div>
+    <div class="profile-row">
+      <div class="profile-left">
+        <p>Email: </p>
+      </div>
+      <div class="profile-right">
+        {{profile.email}}<a>Change</a>
+      </div>
+    </div>
+    <div class="profile-row">
+      <div class="profile-left">
+        <p>Password: </p>
+      </div>
+      <div class="profile-right">
+        **********<a>Change</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,12 +7,14 @@ import { ProjectsComponent } from "./pages/projects/projects.component";
 import { ProjectComponent } from "./pages/project/project.component";
 import { ProjectAddComponent } from "./pages/project/project-add.component";
 import { ProjectEditComponent } from "./pages/project/project-edit.component";
+import { ProfileComponent } from "./pages/profile/profile.component"
 
 const APP_ROUTES: Routes = [
   {path: "", component: HomeComponent},
   {path: "register", component: RegisterComponent},
   {path: "login", component: LoginComponent},
   {path: "admin", component: AdminComponent},
+  {path: "profile", component: ProfileComponent},
   {path: "projects", component: ProjectsComponent},
   {path: "projects/add", component: ProjectAddComponent},
   {path: "projects/edit/:id", component: ProjectEditComponent},

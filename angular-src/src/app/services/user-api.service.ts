@@ -22,6 +22,13 @@ export class UserApiService {
     .map(res => res.json())
   }
 
+  getUserProfile() {
+    let user = JSON.parse(localStorage.getItem('user'))
+    let userObject = {'userId': user.userId}
+    return this.http.post("http://localhost:3001/users/getbyid", userObject)
+    .map(res => res.json())
+  }
+
   getUserByUsername(query) {
     return this.http.post("http://localhost:3001/users/getbyusername", query)
     .map(res => res.json())

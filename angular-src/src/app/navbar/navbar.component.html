@@ -10,6 +10,7 @@
       <div class="navbar-right">
         <li *ngIf="!userApiService.loggedIn()" (click)="menuToggle()" class="navbar-item" [routerLink]="['/login']">Login</li>
         <li *ngIf="!userApiService.loggedIn()" (click)="menuToggle()" class="navbar-item" [routerLink]="['/register']">Register</li>
+        <li *ngIf="userApiService.loggedIn()" (click)="menuToggle()" class="navbar-item" [routerLink]="['/profile']">Profile</li>
         <li *ngIf="userApiService.loggedIn()" (click)="menuToggle()" class="navbar-item" (click)="logout()">Logout</li>
       </div>
     </ul>
