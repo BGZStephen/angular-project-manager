@@ -41,12 +41,28 @@ module.exports.addUser = function(userObject, callback){
   })
 }
 
+module.exports.updateUser = function(query, callback){
+  User.update({'userId': query.userId},{'name': query.name, 'email': query.email}, callback)
+}
+
+module.exports.updatePassword = function(query, callback){
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(query.newPassword, salt, (err, hash) => {
+      if(err) {
+        throw(err)
+      }
+      query.newPassword = hash;
+      User.update({'userId': query.userId},{'password': query.newPassword}, callback)
+    })
+  })
+}
+
 module.exports.deleteUser = function(query, callback){
   User.findOne(query, callback).remove().exec()
 }
 
 module.exports.getUser = function(query, callback){
-  User.findOne(query, callback)
+  User.findOne({userId: query.userId}, callback)
 }
 
 module.exports.getUsers = function(query, callback){

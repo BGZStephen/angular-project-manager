@@ -55,6 +55,22 @@ router.post('/getbyid', (req, res, next) => {
   })
 })
 
+router.post('/updateuser', (req, res, next) => {
+  let query = {
+    userId: req.body.userId,
+    email: req.body.email,
+    name: req.body.name,
+  }
+
+  User.updateUser(query, (err, callback) => {
+    if(err) {
+      res.json({success: false, msg: "User not found"})
+    } else {
+      res.json(callback)
+    }
+  })
+})
+
 router.post('/getbyusername', (req, res, next) => {
   let query = {
     username: req.body.username
@@ -133,6 +149,43 @@ router.post('/authenticate', (req, res, next) => {
     }
   })
 })
+
+router.post('/updatepassword', (req, res, next) => {
+  let query = {
+    userId: req.body.userId,
+    password: req.body.password,
+    newPassword: req.body.newPassword
+  }
+
+  User.getUser(query, (err, user) => {
+    if(err) {
+      res.json({success: false, msg: "User not found"})
+    } else if (!user) {
+      res.json({success: false, msg: "User not found"})
+    } else {
+      // check password against stored has
+      User.comparePassword(query.password, user.password, (err, isMatch) => {
+        if(err) {
+          res.json({success: false, msg: "Passwords didnt match"})
+        }
+
+        // if passwords match, create and return an object contain
+        if(isMatch){
+          User.updatePassword({userId: query.userId, newPassword: query.newPassword}, (err, callback) => {
+            if(err) {
+              res.json({success: false, msg: "Failed to update password"})
+            } else {
+              res.json({success: false, msg: "Password updated"})
+            }
+          })
+        } else {
+          return res.json({success: false, msg: 'Wrong password'});
+        }
+      })
+    }
+  })
+})
+
 
 router.post('/deleteuser', (req, res, next) => {
   let query = {

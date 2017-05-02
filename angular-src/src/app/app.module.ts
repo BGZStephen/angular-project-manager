@@ -19,6 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileEditComponent } from './pages/profile/profile-edit.component';
+import { PasswordEditComponent } from './pages/profile/password-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     FooterComponent,
     RegisterComponent,
     ProfileComponent,
+    ProfileEditComponent,
+    PasswordEditComponent,
   ],
   imports: [
     BrowserModule,

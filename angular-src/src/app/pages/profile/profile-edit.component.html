@@ -6,7 +6,7 @@
         <p>Name: </p>
       </div>
       <div class="profile-right">
-        {{profile.name}}<a [routerLink]="['edit']">Change</a>
+        <input class="profile-input" type="text" value="{{profile.name}}" name="name" #name>
       </div>
     </div>
     <div class="profile-row">
@@ -22,7 +22,7 @@
         <p>Email: </p>
       </div>
       <div class="profile-right">
-        {{profile.email}}<a [routerLink]="['edit']">Change</a>
+        <input class="profile-input" type="text" value="{{profile.email}}" name="email" #email>
       </div>
     </div>
     <div class="profile-row">
@@ -30,8 +30,12 @@
         <p>Password: </p>
       </div>
       <div class="profile-right">
-        **********<a [routerLink]="['editpassword']">Change</a>
+        **********
       </div>
+    </div>
+    <div class="profile-row">
+      <button class="profile-cancel" [routerLink]="['/profile']">Cancel</button>
+      <button class="profile-save" (click)="updateProfile({'email': email.value, 'name': name.value})">Save</button>
     </div>
   </div>
 </div>

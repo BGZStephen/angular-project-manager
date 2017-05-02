@@ -29,6 +29,13 @@ export class UserApiService {
     .map(res => res.json())
   }
 
+  updateProfile(userObject) {
+    let user = JSON.parse(localStorage.getItem('user'))
+    userObject.userId = user.userId
+    return this.http.post("http://localhost:3001/users/updateuser", userObject)
+    .map(res => res.json())
+  }
+
   getUserByUsername(query) {
     return this.http.post("http://localhost:3001/users/getbyusername", query)
     .map(res => res.json())
@@ -51,6 +58,13 @@ export class UserApiService {
 
   authenticate(loginObject) {
     return this.http.post("http://localhost:3001/users/authenticate", loginObject)
+    .map(res => res.json())
+  }
+
+  updatePassword(passwordObject) {
+    let user = JSON.parse(localStorage.getItem('user'))
+    passwordObject.userId = user.userId
+    return this.http.post("http://localhost:3001/users/updatepassword", passwordObject)
     .map(res => res.json())
   }
 

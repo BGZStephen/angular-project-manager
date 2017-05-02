@@ -8,6 +8,8 @@ import { ProjectComponent } from "./pages/project/project.component";
 import { ProjectAddComponent } from "./pages/project/project-add.component";
 import { ProjectEditComponent } from "./pages/project/project-edit.component";
 import { ProfileComponent } from "./pages/profile/profile.component"
+import { ProfileEditComponent } from "./pages/profile/profile-edit.component"
+import { PasswordEditComponent } from "./pages/profile/password-edit.component"
 
 const APP_ROUTES: Routes = [
   {path: "", component: HomeComponent},
@@ -15,6 +17,8 @@ const APP_ROUTES: Routes = [
   {path: "login", component: LoginComponent},
   {path: "admin", component: AdminComponent},
   {path: "profile", component: ProfileComponent},
+  {path: "profile/edit", component: ProfileEditComponent},
+  {path: "profile/editpassword", component: PasswordEditComponent},
   {path: "projects", component: ProjectsComponent},
   {path: "projects/add", component: ProjectAddComponent},
   {path: "projects/edit/:id", component: ProjectEditComponent},
