@@ -12,8 +12,12 @@ export class ProjectApiService {
   addProject(projectObject) {
     let user = JSON.parse(localStorage.getItem('user'))
     projectObject.userId = user.userId
-    console.log(projectObject)
     return this.http.post("http://localhost:3000/project/add", projectObject)
+    .map(res => res.json())
+  }
+
+  updateProject(projectObject) {
+    return this.http.post("http://localhost:3000/project/update", projectObject)
     .map(res => res.json())
   }
 

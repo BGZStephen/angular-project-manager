@@ -46,6 +46,21 @@ router.post('/add', (req, res, next) => {
   })
 });
 
+router.post('/update', (req, res, next) => {
+  let query = {
+    projectId: req.body.projectId,
+    title: req.body.title,
+    description: req.body.description
+  }
+  Project.updateProject(query, (err) => {
+    if(err){
+      res.json({success: false, msg:'Project not updated'});
+    } else {
+      res.json({success: true, msg:'Project updates'});
+    }
+  })
+})
+
 router.post('/delete', (req, res, next) => {
   let query = {
     projectId: req.body.projectId

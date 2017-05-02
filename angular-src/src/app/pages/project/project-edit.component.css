@@ -1,0 +1,38 @@
+.project-edit-container {
+  width: 100%;
+}
+
+.project-edit-header {
+  margin: 10px 0 20px 0;
+}
+
+.project-edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  max-width: 100%;
+}
+
+.project-edit-input {
+  font-size: 1em;
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%;
+}
+
+.project-edit-submit,
+.project-edit-cancel {
+  align-self: flex-start;
+  background: #7f0000;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0;
+  padding: 10px 25px;
+}
+
+.project-edit-cancel {
+  background: black;
+}

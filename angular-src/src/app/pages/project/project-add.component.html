@@ -1,8 +1,8 @@
 <div class="project-add-container">
   <h1 class="project-add-header">Add New Project</h1>
   <form class="project-add-form">
-    <input class="project-add-input" type="text" placeholder="Project Title" name="projectTitle" #projectTitle>
-    <input class="project-add-input" type="text" placeholder="Project Description" name="projectDescription" #projectDescription>
-    <button class="project-add-submit" (click)="addProject({'title': projectTitle.value, 'description': projectDescription.value})">Add</button>
+    <input class="project-add-input" type="text" placeholder="Project Title" name="projectTitle" #projectTitle (keyup)="0">
+    <input class="project-add-input" type="text" placeholder="Project Description" name="projectDescription" #projectDescription (keyup)="0">
+    <button class="project-add-submit" [disabled]="projectTitle.value.length < 1 || projectDescription.value.length < 1" (click)="addProject({'title': projectTitle.value, 'description': projectDescription.value})">Add</button>
   </form>
 </div>

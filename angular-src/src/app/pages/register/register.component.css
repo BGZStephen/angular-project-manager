@@ -10,12 +10,19 @@
 }
 
 .register-input {
+  font-size: 1em;
   margin: 5px 0;
   padding: 5px;
   width: 100%;
 }
 
 .register-button {
+  background: #7f0000;
+  border: none;
+  color: white;
   cursor: pointer;
-  padding: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 5px;
+  padding: 10px 15px;
 }

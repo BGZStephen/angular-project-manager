@@ -1,3 +1,9 @@
-<p>
-  project-edit works!
-</p>
+<div class="project-edit-container" *ngIf="project">
+  <h1 class="project-edit-header">Edit Project</h1>
+  <form class="project-edit-form">
+    <input class="project-edit-input" type="text" value="{{project.title}}" placeholder="Project Title" name="projectTitle" #projectTitle (keyup)="0">
+    <input class="project-edit-input" type="text" value="{{project.description}}" placeholder="Project Description" name="projectDescription" #projectDescription (keyup)="0">
+    <button class="project-edit-cancel" [routerLink]="['/projects']">Cancel</button>
+    <button class="project-edit-submit" [disabled]="projectTitle.value.length < 1 || projectDescription.value.length < 1" (click)="updateProject({'projectId': project.projectId, 'title': projectTitle.value, 'description': projectDescription.value})">Save</button>
+  </form>
+</div>

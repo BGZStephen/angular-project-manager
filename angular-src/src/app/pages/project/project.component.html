@@ -3,7 +3,10 @@
     <div class="project-title-container">
       <a class="fa fa-plus project-toggle"></a>
       <h2 class="project-title">{{project.title}}</h2>
-      <a class="fa fa-trash-o project-delete" (click)="deleteProject({'projectId': project.projectId})"></a>
+      <div class="project-actions-container">
+        <a class="fa fa-pencil project-edit" [routerLink]="['/projects/edit/', project.projectId]"></a>
+        <a class="fa fa-trash-o project-delete" (click)="deleteProject({'projectId': project.projectId})"></a>
+      </div>
     </div>
     <div class="project-content-container">
       <div class="project-description-container">

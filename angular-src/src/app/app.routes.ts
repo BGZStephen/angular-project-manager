@@ -15,7 +15,7 @@ const APP_ROUTES: Routes = [
   {path: "admin", component: AdminComponent},
   {path: "projects", component: ProjectsComponent},
   {path: "projects/add", component: ProjectAddComponent},
-  {path: "projects/edit", component: ProjectEditComponent},
+  {path: "projects/edit/:id", component: ProjectEditComponent},
   {path: "project/:id", component: ProjectComponent},
 ]
 

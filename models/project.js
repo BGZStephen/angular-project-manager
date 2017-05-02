@@ -57,6 +57,10 @@ module.exports.addProject = function(projectObject, callback){
   projectObject.save(callback)
 }
 
+module.exports.updateProject = function(projectObject, callback){
+  Project.update({'projectId': projectObject.projectId},{'title': projectObject.title, 'description': projectObject.description}, callback)
+}
+
 module.exports.addItem = function(itemObject, callback){
   Project.update({'projectId': itemObject.projectId},{'$push': {'incompleteItems': itemObject}}, callback)
 }
