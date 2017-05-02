@@ -8,41 +8,42 @@ export class UserApiService {
 
   authToken: any;
   user: any;
+  port: 3001;
 
   constructor(private http: Http) { }
 
   getAllUsers() {
-    return this.http.post("http://localhost:3000/users/getallusers", {})
+    return this.http.post("http://localhost:3001/users/getallusers", {})
     .map(res => res.json())
   }
 
   getUserById(query) {
-    return this.http.post("http://localhost:3000/users/getbyid", query)
+    return this.http.post("http://localhost:3001/users/getbyid", query)
     .map(res => res.json())
   }
 
   getUserByUsername(query) {
-    return this.http.post("http://localhost:3000/users/getbyusername", query)
+    return this.http.post("http://localhost:3001/users/getbyusername", query)
     .map(res => res.json())
   }
 
   getUserByEmail(query) {
-    return this.http.post("http://localhost:3000/users/getbyemail", query)
+    return this.http.post("http://localhost:3001/users/getbyemail", query)
     .map(res => res.json())
   }
 
   deleteUser(query) {
-    return this.http.post("http://localhost:3000/users/deleteuser", query)
+    return this.http.post("http://localhost:3001/users/deleteuser", query)
     .map(res => res.json())
   }
 
   registerUser(userObject) {
-    return this.http.post("http://localhost:3000/users/register", userObject)
+    return this.http.post("http://localhost:3001/users/register", userObject)
     .map(res => res.json())
   }
 
   authenticate(loginObject) {
-    return this.http.post("http://localhost:3000/users/authenticate", loginObject)
+    return this.http.post("http://localhost:3001/users/authenticate", loginObject)
     .map(res => res.json())
   }
 

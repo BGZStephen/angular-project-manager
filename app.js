@@ -29,7 +29,7 @@ const project = require('./routes/project')
 const counter = require('./routes/counter')
 
 // app port number
-const port = 3000
+const port = 3001
 
 // cors middleware
 app.use(cors())

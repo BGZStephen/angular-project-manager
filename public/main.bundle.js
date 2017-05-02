@@ -73,10 +73,10 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_api_service__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_project_api_service__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_user_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_project_api_service__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_angular2_flash_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(156);
@@ -156,7 +156,7 @@ AppModule = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_home_home_component__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_register_register_component__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_login_login_component__ = __webpack_require__(92);
@@ -182,7 +182,7 @@ var APP_ROUTES = [
     { path: "admin", component: __WEBPACK_IMPORTED_MODULE_4__pages_admin_admin_component__["a" /* AdminComponent */] },
     { path: "projects", component: __WEBPACK_IMPORTED_MODULE_5__pages_projects_projects_component__["a" /* ProjectsComponent */] },
     { path: "projects/add", component: __WEBPACK_IMPORTED_MODULE_7__pages_project_project_add_component__["a" /* ProjectAddComponent */] },
-    { path: "projects/edit", component: __WEBPACK_IMPORTED_MODULE_8__pages_project_project_edit_component__["a" /* ProjectEditComponent */] },
+    { path: "projects/edit/:id", component: __WEBPACK_IMPORTED_MODULE_8__pages_project_project_edit_component__["a" /* ProjectEditComponent */] },
     { path: "project/:id", component: __WEBPACK_IMPORTED_MODULE_6__pages_project_project_component__["a" /* ProjectComponent */] },
 ];
 var router = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(APP_ROUTES);
@@ -231,8 +231,8 @@ FooterComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
@@ -433,7 +433,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".project-add-container {\n  width: 100%;\n}\n\n.project-add-header {\n  margin: 10px 0 20px 0;\n}\n\n.project-add-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 500px;\n  max-width: 100%;\n}\n\n.project-add-input {\n  font-size: 1.2em;\n  margin: 5px 0;\n  padding: 5px\n}\n\n.project-add-task-header {\n  margin: 20px 0 10px 0;\n}\n\n.project-add-submit {\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n  background: #7f0000;\n  border: none;\n  color: white;\n  cursor: pointer;\n  font-weight: bold;\n  font-size: 1.2em;\n  margin: 10px 0;\n  padding: 10px 25px;\n}\n", ""]);
+exports.push([module.i, ".project-add-container {\n  width: 100%;\n}\n\n.project-add-header {\n  margin: 10px 0 20px 0;\n}\n\n.project-add-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 500px;\n  max-width: 100%;\n}\n\n.project-add-input {\n  font-size: 1em;\n  margin: 5px 0;\n  padding: 5px;\n  width: 100%;\n}\n\n.project-add-task-header {\n  margin: 20px 0 10px 0;\n}\n\n.project-add-submit {\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n  background: #7f0000;\n  border: none;\n  color: white;\n  cursor: pointer;\n  font-weight: bold;\n  font-size: 1.2em;\n  margin: 10px 0;\n  padding: 10px 25px;\n}\n", ""]);
 
 // exports
 
@@ -451,7 +451,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".project-edit-container {\n  width: 100%;\n}\n\n.project-edit-header {\n  margin: 10px 0 20px 0;\n}\n\n.project-edit-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 500px;\n  max-width: 100%;\n}\n\n.project-edit-input {\n  font-size: 1em;\n  margin: 5px 0;\n  padding: 5px;\n  width: 100%;\n}\n\n.project-edit-submit,\n.project-edit-cancel {\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n  background: #7f0000;\n  border: none;\n  color: white;\n  cursor: pointer;\n  font-weight: bold;\n  font-size: 1.2em;\n  margin: 10px 0;\n  padding: 10px 25px;\n}\n\n.project-edit-cancel {\n  background: black;\n}\n", ""]);
 
 // exports
 
@@ -469,7 +469,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".projects-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 100%;\n}\n\n.project-container {\n  background: white;\n  border-bottom: 5px solid #7f0000;\n  border-top: 5px solid #7f0000;\n  border-radius: 5px;\n  margin-bottom: 10px;\n  position: relative;\n  width: 100%;\n}\n\n.project-divider {\n  width: 50%;\n  border-top: 1px solid #7f0000;\n  margin: 10px 0;\n}\n\n.project-title-container {\n  background: #7f0000;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.project-toggle {\n  color: white;\n  cursor: pointer;\n  margin-left: 5px;\n  padding: 10px 10px;\n}\n\n.project-delete {\n  color: white;\n  cursor: pointer;\n  margin-left: auto;\n  margin-right: 5px;\n  padding: 10px 10px;\n}\n\n.project-title {\n  color: white;\n  font-size: 1.2em;\n  padding: 10px 5px;\n}\n\n.project-content-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  background: white;\n  overflow: hidden;\n}\n\n.project-content-container-visible {\n  height: auto !important;\n}\n\n.project-description-container {\n  padding: 10px;\n  width: 100%;\n}\n\n.project-description {\n  font-size: 1.2em;\n  font-style: italic;\n  margin: 10px 0;\n}\n\n.incomplete-items-container {\n  padding: 0 10px;\n  width: 100%;\n}\n\n.incomplete-items-header {\n  font-size: 1em;\n  font-weight: normal;\n  margin-top: 10px;\n}\n\n.incomplete-items-list {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.incomplete-item {\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  padding: 5px 0;\n}\n\n.complete-items-container {\n  padding: 10px;\n}\n\n.complete-items-header {\n  font-size: 1em;\n  font-weight: normal;\n  margin-top: 10px;\n}\n\n.complete-items-list {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.complete-item {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #333;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 5px 0;\n  width: 100%;\n}\n\n.complete-item-description {\n  text-decoration: line-through;\n}\n\n.incomplete-list-marker {\n  margin-right: 10px;\n}\n\n.complete-list-marker {\n  margin-right: 10px;\n}\n\n.actions-container {\n  padding: 10px;\n  width: 100%;\n}\n\n.actions-input {\n  margin: 10px 0;\n  padding: 5px\n}\n\n.actions-button {\n  margin: 10px 0;\n  padding: 5px;\n}\n\n@media (min-width: 768px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 20px) / 2);\n  }\n}\n\n@media (min-width: 1024px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 30px) / 3);\n  }\n}\n", ""]);
+exports.push([module.i, ".projects-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 100%;\n}\n\n.project-container {\n  background: white;\n  border-bottom: 5px solid #7f0000;\n  border-top: 5px solid #7f0000;\n  border-radius: 5px;\n  margin-bottom: 10px;\n  position: relative;\n  width: 100%;\n}\n\n.project-divider {\n  width: 50%;\n  border-top: 1px solid #7f0000;\n  margin: 10px 0;\n}\n\n.project-title-container {\n  background: #7f0000;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.project-toggle {\n  color: white;\n  cursor: pointer;\n  margin-left: 5px;\n  padding: 10px 10px;\n}\n\n.project-actions-container {\n  margin-left: auto;\n}\n\n.project-delete {\n  color: white;\n  cursor: pointer;\n  margin-right: 5px;\n  padding: 10px 5px;\n}\n\n.project-edit {\n  color: white;\n  cursor: pointer;\n  margin-left: auto;\n  margin-right: 5px;\n  padding: 10px 5px;\n  text-decoration: none;\n}\n\n.project-title {\n  color: white;\n  font-size: 1.2em;\n  padding: 10px 5px;\n}\n\n.project-content-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  background: white;\n  overflow: hidden;\n}\n\n.project-content-container-visible {\n  height: auto !important;\n}\n\n.project-description-container {\n  padding: 10px;\n  width: 100%;\n}\n\n.project-description {\n  font-size: 1.2em;\n  font-style: italic;\n  margin: 10px 0;\n}\n\n.incomplete-items-container {\n  padding: 0 10px;\n  width: 100%;\n}\n\n.incomplete-items-header {\n  font-size: 1em;\n  font-weight: normal;\n  margin-top: 10px;\n}\n\n.incomplete-items-list {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.incomplete-item {\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  width: 100%;\n  padding: 5px 0;\n}\n\n.complete-items-container {\n  padding: 10px;\n}\n\n.complete-items-header {\n  font-size: 1em;\n  font-weight: normal;\n  margin-top: 10px;\n}\n\n.complete-items-list {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n.complete-item {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #333;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: 5px 0;\n  width: 100%;\n}\n\n.complete-item-description {\n  text-decoration: line-through;\n}\n\n.incomplete-list-marker {\n  margin-right: 10px;\n}\n\n.complete-list-marker {\n  margin-right: 10px;\n}\n\n.actions-container {\n  padding: 10px;\n  width: 100%;\n}\n\n.actions-input {\n  margin: 10px 0;\n  padding: 5px\n}\n\n.actions-button {\n  margin: 10px 0;\n  padding: 5px;\n}\n\n@media (min-width: 768px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 20px) / 2);\n  }\n}\n\n@media (min-width: 1024px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 30px) / 3);\n  }\n}\n", ""]);
 
 // exports
 
@@ -487,7 +487,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".projects-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 100%;\n}\n\n.project-container {\n  background: white;\n  border-bottom: 5px solid #7f0000;\n  border-top: 5px solid #7f0000;\n  border-radius: 5px;\n  margin-bottom: 10px;\n  position: relative;\n  width: 100%;\n}\n\n.project-divider {\n  width: 50%;\n  border-top: 1px solid #7f0000;\n  margin: 10px 0;\n}\n\n.project-title-container {\n  background: #7f0000;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.project-toggle {\n  color: white;\n  cursor: pointer;\n  margin-left: 5px;\n  padding: 10px 10px;\n}\n\n.project-delete {\n  color: white;\n  cursor: pointer;\n  margin-left: auto;\n  margin-right: 5px;\n  padding: 10px 10px;\n}\n\n.project-title {\n  color: white;\n  font-size: 1.2em;\n  padding: 10px 5px;\n}\n\n@media (min-width: 768px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 20px) / 2);\n  }\n}\n\n@media (min-width: 1024px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 30px) / 3);\n  }\n}\n", ""]);
+exports.push([module.i, ".projects-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start;\n  width: 100%;\n}\n\n.project-container {\n  background: white;\n  border-bottom: 5px solid #7f0000;\n  border-top: 5px solid #7f0000;\n  border-radius: 5px;\n  margin-bottom: 10px;\n  position: relative;\n  width: 100%;\n}\n\n.project-divider {\n  width: 50%;\n  border-top: 1px solid #7f0000;\n  margin: 10px 0;\n}\n\n.project-title-container {\n  background: #7f0000;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n\n.project-toggle {\n  color: white;\n  cursor: pointer;\n  margin-left: 5px;\n  padding: 10px 10px;\n}\n\n.project-actions-container {\n  margin-left: auto;\n}\n\n.project-delete {\n  color: white;\n  cursor: pointer;\n  margin-right: 5px;\n  padding: 10px 5px;\n}\n\n.project-edit {\n  color: white;\n  cursor: pointer;\n  margin-left: auto;\n  margin-right: 5px;\n  padding: 10px 5px;\n  text-decoration: none;\n}\n\n.project-title {\n  color: white;\n  font-size: 1.2em;\n  padding: 10px 5px;\n}\n\n@media (min-width: 768px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 20px) / 2);\n  }\n}\n\n@media (min-width: 1024px) {\n  .project-container {\n    border-bottom: 5px solid #7f0000;\n    border-top: 5px solid #7f0000;\n    border-radius: 5px;\n    margin: 0 5px 15px 5px;\n    position: relative;\n    width: calc((100% - 30px) / 3);\n  }\n}\n", ""]);
 
 // exports
 
@@ -505,7 +505,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".register-header {\n  margin-bottom: 10px;\n}\n\n.register-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  max-width: 100%;\n  width: 500px;\n}\n\n.register-input {\n  margin: 5px 0;\n  padding: 5px;\n  width: 100%;\n}\n\n.register-button {\n  cursor: pointer;\n  padding: 5px;\n}\n", ""]);
+exports.push([module.i, ".register-header {\n  margin-bottom: 10px;\n}\n\n.register-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  max-width: 100%;\n  width: 500px;\n}\n\n.register-input {\n  font-size: 1em;\n  margin: 5px 0;\n  padding: 5px;\n  width: 100%;\n}\n\n.register-button {\n  background: #7f0000;\n  border: none;\n  color: white;\n  cursor: pointer;\n  font-size: 1em;\n  font-weight: bold;\n  margin-top: 5px;\n  padding: 10px 15px;\n}\n", ""]);
 
 // exports
 
@@ -560,28 +560,28 @@ module.exports = "<div class=\"content-container\">\n  <h2 class=\"login-header\
 /***/ 238:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"project-add-container\">\n  <h1 class=\"project-add-header\">Add New Project</h1>\n  <form class=\"project-add-form\">\n    <input class=\"project-add-input\" type=\"text\" placeholder=\"Project Title\" name=\"projectTitle\" #projectTitle>\n    <input class=\"project-add-input\" type=\"text\" placeholder=\"Project Description\" name=\"projectDescription\" #projectDescription>\n    <button class=\"project-add-submit\" (click)=\"addProject({'title': projectTitle.value, 'description': projectDescription.value})\">Add</button>\n  </form>\n</div>\n"
+module.exports = "<div class=\"project-add-container\">\n  <h1 class=\"project-add-header\">Add New Project</h1>\n  <form class=\"project-add-form\">\n    <input class=\"project-add-input\" type=\"text\" placeholder=\"Project Title\" name=\"projectTitle\" #projectTitle (keyup)=\"0\">\n    <input class=\"project-add-input\" type=\"text\" placeholder=\"Project Description\" name=\"projectDescription\" #projectDescription (keyup)=\"0\">\n    <button class=\"project-add-submit\" [disabled]=\"projectTitle.value.length < 1 || projectDescription.value.length < 1\" (click)=\"addProject({'title': projectTitle.value, 'description': projectDescription.value})\">Add</button>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 239:
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  project-edit works!\n</p>\n"
+module.exports = "<div class=\"project-edit-container\" *ngIf=\"project\">\n  <h1 class=\"project-edit-header\">Edit Project</h1>\n  <form class=\"project-edit-form\">\n    <input class=\"project-edit-input\" type=\"text\" value=\"{{project.title}}\" placeholder=\"Project Title\" name=\"projectTitle\" #projectTitle (keyup)=\"0\">\n    <input class=\"project-edit-input\" type=\"text\" value=\"{{project.description}}\" placeholder=\"Project Description\" name=\"projectDescription\" #projectDescription (keyup)=\"0\">\n    <button class=\"project-edit-cancel\" [routerLink]=\"['/projects']\">Cancel</button>\n    <button class=\"project-edit-submit\" [disabled]=\"projectTitle.value.length < 1 || projectDescription.value.length < 1\" (click)=\"updateProject({'projectId': project.projectId, 'title': projectTitle.value, 'description': projectDescription.value})\">Save</button>\n  </form>\n</div>\n"
 
 /***/ }),
 
 /***/ 240:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"projects-container\">\n  <div class=\"project-container\" *ngIf=\"project\">\n    <div class=\"project-title-container\">\n      <a class=\"fa fa-plus project-toggle\"></a>\n      <h2 class=\"project-title\">{{project.title}}</h2>\n      <a class=\"fa fa-trash-o project-delete\" (click)=\"deleteProject({'projectId': project.projectId})\"></a>\n    </div>\n    <div class=\"project-content-container\">\n      <div class=\"project-description-container\">\n        <p class=\"project-description\">{{project.description}}</p>\n        <hr class=\"project-divider\">\n      </div>\n      <div class=\"incomplete-items-container\">\n        <h3 class=\"incomplete-items-header\">To do</h3>\n        <hr class=\"project-divider\">\n        <ul class=\"incomplete-items-list\">\n          <li class=\"incomplete-item\" *ngFor=\"let incompleteItem of project.incompleteItems; let incompleteItemIndex = index\"><a class=\"fa fa-trash-o incomplete-list-marker\" (click)=\"deleteItem(incompleteItem, 'incompleteItems')\"></a><a class=\"fa fa-square-o incomplete-list-marker\" (click)=\"moveItem(incompleteItem, 'incompleteItems')\"></a><p (click)=\"moveItem(incompleteItem, 'incompleteItems')\">{{incompleteItem.description}}</p></li>\n        </ul>\n      </div>\n      <div class=\"actions-container\">\n        <input type=\"text\" class=\"actions-input\" placeholder=\"Item description\" #item (keyup)=\"0\">\n        <button class=\"actions-button\" [disabled]=\"item.value.length < 1\" (click)=\"addItem({'description': item.value, 'projectId': project.projectId}); item.value=''\">Add Item</button>\n      </div>\n      <div class=\"complete-items-container\">\n        <h3 class=\"complete-items-header\">Completed</h3>\n        <hr class=\"project-divider\">\n        <ul class=\"complete-items-list\">\n          <li class=\"complete-item\" *ngFor=\"let completedItem of project.completedItems; let completedItemIndex = index\"><a class=\"fa fa-trash-o complete-list-marker\" (click)=\"deleteItem(completedItem, 'completedItems')\"></a><a class=\"fa fa-check-square-o complete-list-marker\" (click)=\"moveItem(completedItem, 'completedItems')\"></a><p class=\"complete-item-description\"><p (click)=\"moveItem(completedItem, 'completedItems')\">{{completedItem.description}}</p></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"projects-container\">\n  <div class=\"project-container\" *ngIf=\"project\">\n    <div class=\"project-title-container\">\n      <a class=\"fa fa-plus project-toggle\"></a>\n      <h2 class=\"project-title\">{{project.title}}</h2>\n      <div class=\"project-actions-container\">\n        <a class=\"fa fa-pencil project-edit\" [routerLink]=\"['/projects/edit/', project.projectId]\"></a>\n        <a class=\"fa fa-trash-o project-delete\" (click)=\"deleteProject({'projectId': project.projectId})\"></a>\n      </div>\n    </div>\n    <div class=\"project-content-container\">\n      <div class=\"project-description-container\">\n        <p class=\"project-description\">{{project.description}}</p>\n        <hr class=\"project-divider\">\n      </div>\n      <div class=\"incomplete-items-container\">\n        <h3 class=\"incomplete-items-header\">To do</h3>\n        <hr class=\"project-divider\">\n        <ul class=\"incomplete-items-list\">\n          <li class=\"incomplete-item\" *ngFor=\"let incompleteItem of project.incompleteItems; let incompleteItemIndex = index\"><a class=\"fa fa-trash-o incomplete-list-marker\" (click)=\"deleteItem(incompleteItem, 'incompleteItems')\"></a><a class=\"fa fa-square-o incomplete-list-marker\" (click)=\"moveItem(incompleteItem, 'incompleteItems')\"></a><p (click)=\"moveItem(incompleteItem, 'incompleteItems')\">{{incompleteItem.description}}</p></li>\n        </ul>\n      </div>\n      <div class=\"actions-container\">\n        <input type=\"text\" class=\"actions-input\" placeholder=\"Item description\" #item (keyup)=\"0\">\n        <button class=\"actions-button\" [disabled]=\"item.value.length < 1\" (click)=\"addItem({'description': item.value, 'projectId': project.projectId}); item.value=''\">Add Item</button>\n      </div>\n      <div class=\"complete-items-container\">\n        <h3 class=\"complete-items-header\">Completed</h3>\n        <hr class=\"project-divider\">\n        <ul class=\"complete-items-list\">\n          <li class=\"complete-item\" *ngFor=\"let completedItem of project.completedItems; let completedItemIndex = index\"><a class=\"fa fa-trash-o complete-list-marker\" (click)=\"deleteItem(completedItem, 'completedItems')\"></a><a class=\"fa fa-check-square-o complete-list-marker\" (click)=\"moveItem(completedItem, 'completedItems')\"></a><p class=\"complete-item-description\"><p (click)=\"moveItem(completedItem, 'completedItems')\">{{completedItem.description}}</p></li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 241:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"projects-container\">\n  <div class=\"project-container\" *ngFor=\"let project of projects; let i = index\">\n    <div class=\"project-title-container\" [routerLink]=\"['/project', project.projectId]\">\n      <a class=\"fa fa-plus project-toggle\"></a>\n      <h2 class=\"project-title\">{{project.title}}</h2>\n      <a class=\"fa fa-trash-o project-delete\" (click)=\"deleteProject({'projectId': project.projectId})\"></a>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"projects-container\">\n  <div class=\"project-container\" *ngFor=\"let project of projects; let i = index\">\n    <div class=\"project-title-container\" [routerLink]=\"['/project', project.projectId]\">\n      <a class=\"fa fa-plus project-toggle\"></a>\n      <h2 class=\"project-title\">{{project.title}}</h2>\n      <div class=\"project-actions-container\">\n        <a class=\"fa fa-pencil project-edit\" [routerLink]=\"['/projects/edit/', project.projectId]\"></a>\n        <a class=\"fa fa-trash-o project-delete\" (click)=\"deleteProject({'projectId': project.projectId})\"></a>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -597,7 +597,80 @@ module.exports = "<h2 class=\"register-header\">Register</h2>\n<form class=\"reg
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectApiService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ProjectApiService = (function () {
+    function ProjectApiService(http) {
+        this.http = http;
+    }
+    ProjectApiService.prototype.addProject = function (projectObject) {
+        var user = JSON.parse(localStorage.getItem('user'));
+        projectObject.userId = user.userId;
+        return this.http.post("http://localhost:3001/project/add", projectObject)
+            .map(function (res) { return res.json(); });
+    };
+    ProjectApiService.prototype.updateProject = function (projectObject) {
+        return this.http.post("http://localhost:3001/project/update", projectObject)
+            .map(function (res) { return res.json(); });
+    };
+    ProjectApiService.prototype.getProjectsByUser = function () {
+        var user = JSON.parse(localStorage.getItem('user'));
+        var projectObject = { userId: user.userId };
+        return this.http.post("http://localhost:3001/project/user", projectObject)
+            .map(function (res) { return res.json(); });
+    };
+    ProjectApiService.prototype.getProjectById = function (query) {
+        return this.http.post("http://localhost:3001/project/id", query)
+            .map(function (res) { return res.json(); });
+    };
+    ProjectApiService.prototype.addProjectItem = function (itemObject) {
+        return this.http.post("http://localhost:3001/project/createItem", itemObject)
+            .map(function (res) { return res.json(); });
+    };
+    ProjectApiService.prototype.moveItem = function (itemObject) {
+        return this.http.post("http://localhost:3001/project/moveItem", itemObject)
+            .map(function (res) { return res.json(); });
+    };
+    ProjectApiService.prototype.deleteItem = function (itemObject) {
+        return this.http.post("http://localhost:3001/project/deleteItem", itemObject)
+            .map(function (res) { return res.json(); });
+    };
+    ProjectApiService.prototype.deleteProject = function (projectObject) {
+        return this.http.post("http://localhost:3001/project/delete", projectObject)
+            .map(function (res) { return res.json(); });
+    };
+    return ProjectApiService;
+}());
+ProjectApiService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], ProjectApiService);
+
+var _a;
+//# sourceMappingURL=project-api.service.js.map
+
+/***/ }),
+
+/***/ 32:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_jwt__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(81);
@@ -621,23 +694,31 @@ var UserApiService = (function () {
         this.http = http;
     }
     UserApiService.prototype.getAllUsers = function () {
-        return this.http.post("http://localhost:3000/users/getallusers", {})
+        return this.http.post("http://localhost:3001/users/getallusers", {})
             .map(function (res) { return res.json(); });
     };
     UserApiService.prototype.getUserById = function (query) {
-        return this.http.post("http://localhost:3000/users/getbyid", query)
+        return this.http.post("http://localhost:3001/users/getbyid", query)
+            .map(function (res) { return res.json(); });
+    };
+    UserApiService.prototype.getUserByUsername = function (query) {
+        return this.http.post("http://localhost:3001/users/getbyusername", query)
+            .map(function (res) { return res.json(); });
+    };
+    UserApiService.prototype.getUserByEmail = function (query) {
+        return this.http.post("http://localhost:3001/users/getbyemail", query)
             .map(function (res) { return res.json(); });
     };
     UserApiService.prototype.deleteUser = function (query) {
-        return this.http.post("http://localhost:3000/users/deleteuser", query)
+        return this.http.post("http://localhost:3001/users/deleteuser", query)
             .map(function (res) { return res.json(); });
     };
     UserApiService.prototype.registerUser = function (userObject) {
-        return this.http.post("http://localhost:3000/users/register", userObject)
+        return this.http.post("http://localhost:3001/users/register", userObject)
             .map(function (res) { return res.json(); });
     };
     UserApiService.prototype.authenticate = function (loginObject) {
-        return this.http.post("http://localhost:3000/users/authenticate", loginObject)
+        return this.http.post("http://localhost:3001/users/authenticate", loginObject)
             .map(function (res) { return res.json(); });
     };
     UserApiService.prototype.storeUserData = function (token, user) {
@@ -666,76 +747,6 @@ var _a;
 
 /***/ }),
 
-/***/ 46:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectApiService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var ProjectApiService = (function () {
-    function ProjectApiService(http) {
-        this.http = http;
-    }
-    ProjectApiService.prototype.addProject = function (projectObject) {
-        var user = JSON.parse(localStorage.getItem('user'));
-        projectObject.userId = user.userId;
-        console.log(projectObject);
-        return this.http.post("http://localhost:3000/project/add", projectObject)
-            .map(function (res) { return res.json(); });
-    };
-    ProjectApiService.prototype.getProjectsByUser = function () {
-        var user = JSON.parse(localStorage.getItem('user'));
-        var projectObject = { userId: user.userId };
-        return this.http.post("http://localhost:3000/project/user", projectObject)
-            .map(function (res) { return res.json(); });
-    };
-    ProjectApiService.prototype.getProjectById = function (query) {
-        return this.http.post("http://localhost:3000/project/id", query)
-            .map(function (res) { return res.json(); });
-    };
-    ProjectApiService.prototype.addProjectItem = function (itemObject) {
-        return this.http.post("http://localhost:3000/project/createItem", itemObject)
-            .map(function (res) { return res.json(); });
-    };
-    ProjectApiService.prototype.moveItem = function (itemObject) {
-        return this.http.post("http://localhost:3000/project/moveItem", itemObject)
-            .map(function (res) { return res.json(); });
-    };
-    ProjectApiService.prototype.deleteItem = function (itemObject) {
-        return this.http.post("http://localhost:3000/project/deleteItem", itemObject)
-            .map(function (res) { return res.json(); });
-    };
-    ProjectApiService.prototype.deleteProject = function (projectObject) {
-        return this.http.post("http://localhost:3000/project/delete", projectObject)
-            .map(function (res) { return res.json(); });
-    };
-    return ProjectApiService;
-}());
-ProjectApiService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
-], ProjectApiService);
-
-var _a;
-//# sourceMappingURL=project-api.service.js.map
-
-/***/ }),
-
 /***/ 504:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -749,7 +760,7 @@ module.exports = __webpack_require__(150);
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminComponent; });
@@ -845,8 +856,8 @@ HomeComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
@@ -907,8 +918,8 @@ var _a, _b, _c;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectAddComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -957,6 +968,8 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_project_api_service__ = __webpack_require__(31);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectEditComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -968,10 +981,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ProjectEditComponent = (function () {
-    function ProjectEditComponent() {
+    function ProjectEditComponent(projectApiService, router, activatedRoute) {
+        this.projectApiService = projectApiService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
     }
     ProjectEditComponent.prototype.ngOnInit = function () {
+        this.refreshProject();
+    };
+    ProjectEditComponent.prototype.refreshProject = function () {
+        var _this = this;
+        this.activatedRoute.params
+            .map(function (params) { return params['id']; })
+            .subscribe(function (id) {
+            var query = { projectId: id };
+            _this.projectApiService.getProjectById(query)
+                .subscribe(function (res) {
+                _this.project = res;
+            });
+        });
+    };
+    ProjectEditComponent.prototype.updateProject = function (projectObject) {
+        var _this = this;
+        this.projectApiService.updateProject(projectObject)
+            .subscribe(function (res) {
+            _this.router.navigate(['/projects']);
+        });
     };
     return ProjectEditComponent;
 }());
@@ -981,9 +1019,10 @@ ProjectEditComponent = __decorate([
         template: __webpack_require__(239),
         styles: [__webpack_require__(227)]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_project_api_service__["a" /* ProjectApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_project_api_service__["a" /* ProjectApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _c || Object])
 ], ProjectEditComponent);
 
+var _a, _b, _c;
 //# sourceMappingURL=project-edit.component.js.map
 
 /***/ }),
@@ -993,8 +1032,8 @@ ProjectEditComponent = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_project_api_service__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_project_api_service__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectComponent; });
@@ -1085,9 +1124,10 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjectsComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1101,10 +1141,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ProjectsComponent = (function () {
-    function ProjectsComponent(projectApiService, flashMessage) {
+    function ProjectsComponent(projectApiService, flashMessage, router) {
         this.projectApiService = projectApiService;
         this.flashMessage = flashMessage;
+        this.router = router;
         this.projectVisible = false;
         this.projects = [];
     }
@@ -1128,6 +1170,7 @@ var ProjectsComponent = (function () {
         this.projectApiService.deleteProject(projectObject)
             .subscribe(function (res) {
             _this.flashMessage.show('Project Deleted', { cssClass: "message-success", timeout: 1500 });
+            _this.router.navigate(['/projects']);
         });
     };
     return ProjectsComponent;
@@ -1138,10 +1181,10 @@ ProjectsComponent = __decorate([
         template: __webpack_require__(241),
         styles: [__webpack_require__(229)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__["a" /* ProjectApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__["a" /* ProjectApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__["a" /* ProjectApiService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_project_api_service__["a" /* ProjectApiService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _c || Object])
 ], ProjectsComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=projects.component.js.map
 
 /***/ }),
@@ -1151,10 +1194,10 @@ var _a, _b;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_api_service__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1177,15 +1220,31 @@ var RegisterComponent = (function () {
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
-    RegisterComponent.prototype.registerUser = function (usreObject) {
+    RegisterComponent.prototype.registerUser = function (userObject) {
         var _this = this;
-        this.userApiService.registerUser(usreObject)
+        this.userApiService.getUserByEmail(userObject)
             .subscribe(function (res) {
-            console.log(res);
-            if (res.success) {
-                _this.flashMessage.show('Registration Successful', { cssClass: "message-success", timeout: 3000 });
+            if (res) {
+                _this.flashMessage.show('Email already exists', { cssClass: "message-failure", timeout: 3000 });
             }
-            _this.router.navigate(['/login']);
+            else {
+                _this.userApiService.getUserByUsername(userObject)
+                    .subscribe(function (res) {
+                    if (res) {
+                        _this.flashMessage.show('Username already exists', { cssClass: "message-failure", timeout: 3000 });
+                    }
+                    else {
+                        _this.userApiService.registerUser(userObject)
+                            .subscribe(function (res) {
+                            console.log(res);
+                            if (res.success) {
+                                _this.flashMessage.show('Registration Successful', { cssClass: "message-success", timeout: 3000 });
+                            }
+                            _this.router.navigate(['/login']);
+                        });
+                    }
+                });
+            }
         });
     };
     return RegisterComponent;

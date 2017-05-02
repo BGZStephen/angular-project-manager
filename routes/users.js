@@ -102,8 +102,9 @@ router.post('/authenticate', (req, res, next) => {
   User.getUserByUsername(query, (err, user) => {
     if(err) {
       res.json({success: false, msg: "User not found"})
+    } else if (!user) {
+      res.json({success: false, msg: "User not found"})
     } else {
-
       // check password against stored has
       User.comparePassword(query.password, user.password, (err, isMatch) => {
         if(err) {
