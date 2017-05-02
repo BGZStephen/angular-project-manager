@@ -21,6 +21,16 @@ export class UserApiService {
     .map(res => res.json())
   }
 
+  getUserByUsername(query) {
+    return this.http.post("http://localhost:3000/users/getbyusername", query)
+    .map(res => res.json())
+  }
+
+  getUserByEmail(query) {
+    return this.http.post("http://localhost:3000/users/getbyemail", query)
+    .map(res => res.json())
+  }
+
   deleteUser(query) {
     return this.http.post("http://localhost:3000/users/deleteuser", query)
     .map(res => res.json())

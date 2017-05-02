@@ -55,6 +55,34 @@ router.post('/getbyid', (req, res, next) => {
   })
 })
 
+router.post('/getbyusername', (req, res, next) => {
+  let query = {
+    username: req.body.username
+  }
+
+  User.getUser(query, (err, callback) => {
+    if(err) {
+      res.json({success: false, msg: "User not found"})
+    } else {
+      res.json(callback)
+    }
+  })
+})
+
+router.post('/getbyemail', (req, res, next) => {
+  let query = {
+    email: req.body.email
+  }
+
+  User.getUser(query, (err, callback) => {
+    if(err) {
+      res.json({success: false, msg: "User not found"})
+    } else {
+      res.json(callback)
+    }
+  })
+})
+
 router.post('/getallusers', (req, res, next) => {
   User.getUsers({}, (err, callback) => {
     if(err) {
