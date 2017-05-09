@@ -1,4 +1,4 @@
 module.exports = {
-  database: "mongodb://localhost:27017/mean-project-manager",
+  database: "mongodb://stephen:password@ds155130.mlab.com:55130/bgzstephen-mean-authentication-app",
   secret: "meanprojectmanager"
 }

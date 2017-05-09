@@ -13,58 +13,58 @@ export class UserApiService {
   constructor(private http: Http) { }
 
   getAllUsers() {
-    return this.http.post("http://localhost:3001/users/getallusers", {})
+    return this.http.post("/users/getallusers", {})
     .map(res => res.json())
   }
 
   getUserById(query) {
-    return this.http.post("http://localhost:3001/users/getbyid", query)
+    return this.http.post("/users/getbyid", query)
     .map(res => res.json())
   }
 
   getUserProfile() {
     let user = JSON.parse(localStorage.getItem('user'))
     let userObject = {'userId': user.userId}
-    return this.http.post("http://localhost:3001/users/getbyid", userObject)
+    return this.http.post("/users/getbyid", userObject)
     .map(res => res.json())
   }
 
   updateProfile(userObject) {
     let user = JSON.parse(localStorage.getItem('user'))
     userObject.userId = user.userId
-    return this.http.post("http://localhost:3001/users/updateuser", userObject)
+    return this.http.post("/users/updateuser", userObject)
     .map(res => res.json())
   }
 
   getUserByUsername(query) {
-    return this.http.post("http://localhost:3001/users/getbyusername", query)
+    return this.http.post("/users/getbyusername", query)
     .map(res => res.json())
   }
 
   getUserByEmail(query) {
-    return this.http.post("http://localhost:3001/users/getbyemail", query)
+    return this.http.post("/users/getbyemail", query)
     .map(res => res.json())
   }
 
   deleteUser(query) {
-    return this.http.post("http://localhost:3001/users/deleteuser", query)
+    return this.http.post("/users/deleteuser", query)
     .map(res => res.json())
   }
 
   registerUser(userObject) {
-    return this.http.post("http://localhost:3001/users/register", userObject)
+    return this.http.post("/users/register", userObject)
     .map(res => res.json())
   }
 
   authenticate(loginObject) {
-    return this.http.post("http://localhost:3001/users/authenticate", loginObject)
+    return this.http.post("/users/authenticate", loginObject)
     .map(res => res.json())
   }
 
   updatePassword(passwordObject) {
     let user = JSON.parse(localStorage.getItem('user'))
     passwordObject.userId = user.userId
-    return this.http.post("http://localhost:3001/users/updatepassword", passwordObject)
+    return this.http.post("/users/updatepassword", passwordObject)
     .map(res => res.json())
   }
 
